@@ -1,0 +1,1616 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blog do Dr. Iuri Zolini</title>
+<meta name="description" content="Artigos do Dr. Iuri Zolini, cirurgião plástico em Conselheiro Lafaiete (MG), sobre lipoescultura, abdominoplastia, prótese de silicone, mastopexia, lifting, blefaroplastia, ginecomastia e mais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: editorial clínico. Hero noturno com o nome em Bodoni; faixas alternando papel frio e marinho;
+   fios finos em caramelo funcionam como linha de sutura entre os blocos. Visual único (não muda com o tema). */
+:root {
+  /* Paleta tirada do Instagram @driurizolini */
+  --noite: #08111D;      /* fundo dos posts */
+  --marinho: #0F1D30;    /* faixas escuras secundárias */
+  --azul: #366196;       /* capas dos destaques: cor de ação */
+  --azul-hover: #2B5181;
+  --azul-claro: #9DB9DD; /* azul legível sobre fundo escuro */
+  --caramelo: #B88769;   /* tom quente dos posts: fios e detalhes */
+  --papel: #F3F5F8;      /* fundo claro com leve viés azul */
+  --branco: #FFFFFF;
+  --tinta: #142033;      /* texto sobre claro */
+  --cinza: #556175;      /* texto secundário sobre claro */
+  --nevoa: #B9C3D1;      /* texto secundário sobre escuro */
+  --linha: rgba(20, 32, 51, .12);
+  --linha-escura: rgba(255, 255, 255, .12);
+
+  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --f-texto: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --gutter: max(clamp(16px, 4vw, 40px), env(safe-area-inset-left, 0px));
+  --gutter-r: max(clamp(16px, 4vw, 40px), env(safe-area-inset-right, 0px));
+  --raio: 4px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 60; background: var(--noite);
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--caramelo); outline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter-r);
+}
+.band { padding-block: clamp(64px, 10vw, 120px); }
+.band--escura { background: var(--noite); color: var(--branco); }
+.band--marinho { background: var(--marinho); color: var(--branco); }
+.band--branca { background: var(--branco); }
+
+.rotulo {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: .75rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--azul);
+}
+.rotulo::before { content: ""; width: 28px; height: 1px; background: var(--caramelo); }
+.band--escura .rotulo, .band--marinho .rotulo { color: var(--caramelo); }
+
+.titulo {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+}
+.titulo em { font-style: italic; color: var(--azul); }
+.band--escura .titulo em, .band--marinho .titulo em { color: var(--azul-claro); }
+.lead { font-size: clamp(1.02rem, 1.4vw, 1.15rem); color: var(--cinza); max-width: 62ch; }
+.band--escura .lead, .band--marinho .lead { color: var(--nevoa); }
+.cabeca { display: grid; gap: 18px; margin-bottom: clamp(36px, 5vw, 56px); }
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 14px 26px;
+  border-radius: 999px; border: 1px solid transparent;
+  font: 600 .95rem/1.2 var(--f-texto); letter-spacing: .01em;
+  text-decoration: none; cursor: pointer;
+  transition: background-color .2s, border-color .2s, color .2s, transform .2s;
+}
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn--whats { background: var(--azul); color: var(--branco); }
+.btn--whats:hover { background: var(--azul-hover); }
+.btn--linha { border-color: currentColor; color: var(--tinta); background: transparent; }
+.btn--linha:hover { background: var(--tinta); color: var(--branco); border-color: var(--tinta); }
+.band--escura .btn--linha, .band--marinho .btn--linha { color: var(--branco); }
+.band--escura .btn--linha:hover, .band--marinho .btn--linha:hover { background: var(--branco); color: var(--noite); border-color: var(--branco); }
+.acoes { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ===== Hero (camadas com profundidade) ===== */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: clamp(600px, 100svh, 940px);
+  display: flex; align-items: flex-end;
+  background: var(--noite); color: var(--branco);
+}
+.hero__luz {
+  position: absolute; inset: -12%; z-index: -3; pointer-events: none;
+  background:
+    radial-gradient(42% 58% at 72% 36%, rgba(54, 97, 150, .5), transparent 70%),
+    radial-gradient(26% 36% at 88% 14%, rgba(184, 135, 105, .16), transparent 70%);
+}
+.hero__foto {
+  /* FOTO DE EXEMPLO (Unsplash). Troque img/hero.webp pela foto profissional do Dr. Iuri. */
+  position: absolute; z-index: -2; margin: 0;
+  top: 0; right: 0; bottom: 0; width: min(58%, 860px);
+}
+.hero__foto img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+.hero__foto::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, var(--noite) 0%, rgba(8, 17, 29, .55) 24%, rgba(8, 17, 29, 0) 58%),
+    linear-gradient(0deg, var(--noite) 0%, rgba(8, 17, 29, 0) 34%);
+}
+.hero__conteudo { position: relative; padding-block: 120px clamp(56px, 9vw, 104px); }
+.camada { will-change: transform; }
+@media (max-width: 760px) {
+  /* Celular: a foto ocupa o topo e o nome fica embaixo, sobre o terno, sem cobrir o rosto */
+  .hero { min-height: max(640px, 100svh); }
+  .hero__foto { left: 0; width: auto; bottom: auto; height: calc(100% - 150px); }
+  .hero__foto img { object-position: 50% 10%; }
+  .hero__foto::after {
+    background:
+      linear-gradient(0deg, var(--noite) 0%, rgba(8, 17, 29, .82) 14%, rgba(8, 17, 29, 0) 46%),
+      linear-gradient(180deg, rgba(8, 17, 29, .5) 0%, rgba(8, 17, 29, 0) 16%);
+  }
+  .hero__conteudo { padding-block: 0 calc(40px + env(safe-area-inset-bottom, 0px)); }
+}
+.hero__dr {
+  display: block;
+  font-family: var(--f-display); font-style: italic; font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 2rem); color: var(--caramelo);
+  margin-bottom: 4px;
+}
+.hero__nome {
+  font-family: var(--f-display); font-weight: 400;
+  font-size: clamp(3.6rem, 17vw, 9.5rem);
+  line-height: .92; letter-spacing: -.02em;
+}
+.hero__nome span { display: block; }
+.hero__esp {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: clamp(20px, 3vw, 32px);
+  font-size: clamp(.8rem, 1.3vw, .95rem); font-weight: 600;
+  letter-spacing: .32em; text-transform: uppercase; color: var(--nevoa);
+}
+.hero__esp::before { content: ""; width: clamp(40px, 6vw, 72px); height: 1px; background: var(--caramelo); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero__nome span, .hero__dr, .hero__esp { animation: subir .9s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero__nome span:nth-child(2) { animation-delay: .08s; }
+  .hero__esp { animation-delay: .2s; }
+  @keyframes subir { from { transform: translateY(18px); opacity: .001; } to { transform: none; opacity: 1; } }
+}
+
+/* ===== Cabeçalho (aparece depois do hero) ===== */
+.topo {
+  position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); z-index: 50;
+  background: rgba(8, 17, 29, .94);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  color: var(--branco);
+  border-bottom: 1px solid var(--linha-escura);
+  transform: translateY(-110%); transition: transform .35s ease;
+}
+.topo.visivel { transform: none; }
+.topo__barra { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 68px; }
+.marca { text-decoration: none; display: grid; line-height: 1.1; }
+.marca strong { font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; letter-spacing: .01em; }
+.marca small { font-size: .62rem; letter-spacing: .26em; text-transform: uppercase; color: var(--caramelo); }
+.menu { display: flex; gap: clamp(14px, 2vw, 28px); }
+.menu a { text-decoration: none; font-size: .88rem; font-weight: 500; color: var(--nevoa); transition: color .2s; }
+.menu a:hover { color: var(--branco); }
+.topo__acoes { display: flex; align-items: center; gap: 10px; }
+.icone-btn {
+  display: inline-grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 50%; border: 1px solid var(--linha-escura); color: var(--branco);
+  background: transparent; cursor: pointer; text-decoration: none;
+}
+.icone-btn svg { width: 20px; height: 20px; }
+.icone-btn:hover { border-color: var(--caramelo); }
+.topo .btn { min-height: 44px; padding: 10px 20px; font-size: .88rem; }
+.so-mobile { display: none; }
+@media (max-width: 900px) {
+  .menu { display: none; }
+  .so-mobile { display: inline-grid; }
+  .topo .btn--whats span { display: none; }
+  .topo .btn--whats { width: 44px; padding: 0; }
+}
+.gaveta {
+  position: fixed; inset: 0; z-index: 70; background: var(--noite); color: var(--branco);
+  padding: calc(env(safe-area-inset-top, 0px) + 20px) var(--gutter-r) calc(env(safe-area-inset-bottom, 0px) + 32px) var(--gutter);
+  display: flex; flex-direction: column; gap: 32px;
+}
+.gaveta__topo { display: flex; justify-content: space-between; align-items: center; }
+.gaveta nav { display: grid; gap: 6px; }
+.gaveta nav a {
+  font-family: var(--f-display); font-size: 2rem; text-decoration: none; padding-block: 6px;
+  border-bottom: 1px solid var(--linha-escura);
+}
+.gaveta .btn { margin-top: auto; }
+
+/* ===== Abertura ===== */
+.abertura__grade { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6vw, 80px); align-items: end; }
+.abertura__grade > * { min-width: 0; }
+.abertura .titulo { font-size: clamp(2.1rem, 5vw, 3.6rem); }
+.registro {
+  display: grid; gap: 0; border-top: 1px solid var(--linha);
+}
+.registro div {
+  display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+  padding-block: 14px; border-bottom: 1px solid var(--linha);
+}
+.registro dt { font-size: .75rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--cinza); }
+.registro dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.abertura__texto { display: grid; gap: 24px; }
+@media (max-width: 860px) { .abertura__grade { grid-template-columns: 1fr; } }
+
+/* ===== Sobre ===== */
+.sobre__grade { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(36px, 6vw, 88px); }
+.sobre__grade > * { min-width: 0; }
+.retrato-wrap { position: relative; align-self: start; padding: 0 24px 24px 0; max-width: 100%; }
+.retrato__moldura {
+  position: absolute; inset: 24px 0 0 24px; border: 1px solid var(--caramelo); border-radius: var(--raio);
+  pointer-events: none;
+}
+.retrato {
+  position: relative; margin: 0; aspect-ratio: 4 / 5; max-width: 100%;
+  border-radius: var(--raio); overflow: hidden; background: var(--marinho);
+}
+.retrato img { position: absolute; inset: -9% 0; width: 100%; height: 118%; object-fit: cover; object-position: 50% 20%; }
+.retrato::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 17, 29, .75) 0%, rgba(8, 17, 29, 0) 35%); }
+.retrato__legenda {
+  position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 1;
+  display: flex; justify-content: space-between; gap: 12px;
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--nevoa);
+}
+.sobre__texto { display: grid; gap: 22px; align-content: start; }
+.sobre__texto p { max-width: 60ch; color: var(--nevoa); }
+.compromissos { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 0; border-top: 1px solid var(--linha-escura); }
+.compromissos li { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding-block: 20px; border-bottom: 1px solid var(--linha-escura); }
+.compromissos strong { font-family: var(--f-display); font-weight: 500; font-size: 1.35rem; color: var(--branco); }
+.compromissos span { color: var(--nevoa); }
+@media (max-width: 860px) {
+  .sobre__grade { grid-template-columns: 1fr; }
+  .retrato { aspect-ratio: 4 / 4.2; }
+}
+@media (max-width: 520px) { .compromissos li { grid-template-columns: 1fr; gap: 4px; } }
+
+/* ===== Procedimentos ===== */
+.abas-rolagem { overflow-x: auto; scrollbar-width: none; margin-bottom: 28px; }
+.abas-rolagem::-webkit-scrollbar { display: none; }
+.abas { display: inline-flex; gap: 8px; padding: 4px; border-radius: 999px; background: var(--branco); border: 1px solid var(--linha); }
+.aba {
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  min-height: 44px; padding: 10px 20px; border-radius: 999px; white-space: nowrap;
+  font: 600 .9rem/1 var(--f-texto); color: var(--cinza);
+  transition: background-color .2s, color .2s;
+}
+.aba[aria-selected="true"] { background: var(--noite); color: var(--branco); }
+.aba:not([aria-selected="true"]):hover { color: var(--tinta); }
+.procs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 1px; background: var(--linha); border: 1px solid var(--linha); }
+.procs[data-n="4"] { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+.procs[data-n="1"] { max-width: 560px; }
+.proc { background: var(--branco); padding: 28px 26px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.proc h3 { font-family: var(--f-display); font-weight: 500; font-size: 1.45rem; line-height: 1.2; }
+.proc p { color: var(--cinza); font-size: .97rem; }
+.proc__links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 6px; }
+.proc a {
+  justify-self: start; display: inline-flex; align-items: center; gap: 8px;
+  font-size: .88rem; font-weight: 600; color: var(--azul); text-decoration: none;
+  border-bottom: 1px solid transparent; padding-block: 4px;
+}
+.proc a:hover { border-bottom-color: currentColor; }
+.proc a svg { width: 16px; height: 16px; }
+.procs__rodape { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; margin-top: 32px; }
+.procs__rodape p { color: var(--cinza); max-width: 52ch; }
+
+/* ===== Faixa com foto de fundo (profundidade) ===== */
+.band--foto { position: relative; isolation: isolate; overflow: hidden; }
+.band__foto { position: absolute; inset: -18% 0; z-index: -1; margin: 0; }
+.band__foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.band__foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 29, 48, .92), rgba(15, 29, 48, .82) 50%, rgba(15, 29, 48, .94)); }
+
+/* ===== Como funciona ===== */
+.passos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: passo; }
+.passo { position: relative; padding: 28px 24px 0 0; border-top: 1px solid var(--linha-escura); min-width: 0; }
+.passo::before {
+  counter-increment: passo; content: counter(passo, decimal-leading-zero);
+  display: block; font-family: var(--f-display); font-size: 2.6rem; line-height: 1; color: var(--caramelo); margin-bottom: 18px;
+  font-variant-numeric: lining-nums;
+}
+.passo::after { content: ""; position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--caramelo); }
+.passo h3 { font-family: var(--f-texto); font-weight: 600; font-size: 1.05rem; margin-bottom: 8px; }
+.passo p { color: var(--nevoa); font-size: .95rem; }
+@media (max-width: 900px) { .passos { grid-template-columns: repeat(2, 1fr); row-gap: 40px; } }
+@media (max-width: 520px) { .passos { grid-template-columns: 1fr; row-gap: 32px; } }
+
+/* ===== Diferenciais ===== */
+.dif__grade { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 88px); }
+.dif__grade > * { min-width: 0; }
+.dif__intro { display: grid; gap: 20px; align-content: start; position: sticky; top: 100px; }
+.difs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--linha); }
+.difs li { display: grid; grid-template-columns: 22px 1fr; gap: 16px; padding-block: 22px; border-bottom: 1px solid var(--linha); }
+.difs svg { width: 18px; height: 18px; margin-top: 4px; color: var(--caramelo); }
+.difs h3 { font-family: var(--f-texto); font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; }
+.difs p { color: var(--cinza); }
+.difs a { color: var(--azul); }
+@media (max-width: 860px) { .dif__grade { grid-template-columns: 1fr; } .dif__intro { position: static; } }
+
+/* ===== Avaliações ===== */
+.notas { display: flex; flex-wrap: wrap; gap: 12px 36px; margin-top: 8px; }
+.nota { display: flex; align-items: baseline; gap: 10px; }
+.nota strong { font-family: var(--f-display); font-size: 2.6rem; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+.nota span { font-size: .85rem; color: var(--nevoa); }
+.carrossel { position: relative; }
+.trilho {
+  display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--gutter);
+  padding: 4px var(--gutter-r) 8px var(--gutter);
+  scrollbar-width: none; cursor: grab; -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.trilho::-webkit-scrollbar { display: none; }
+.trilho.arrastando { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.depo {
+  flex: 0 0 min(360px, 84vw); scroll-snap-align: start;
+  background: var(--marinho); border: 1px solid var(--linha-escura); border-radius: var(--raio);
+  padding: 28px 26px; display: flex; flex-direction: column; gap: 18px; min-width: 0;
+}
+.estrelas { display: flex; gap: 3px; color: var(--caramelo); }
+.estrelas svg { width: 16px; height: 16px; }
+.depo blockquote { margin: 0; font-family: var(--f-display); font-size: 1.12rem; line-height: 1.5; color: var(--branco); flex: 1; }
+.depo footer { display: flex; justify-content: space-between; gap: 12px; font-size: .82rem; color: var(--nevoa); border-top: 1px solid var(--linha-escura); padding-top: 14px; }
+.depo footer strong { color: var(--branco); font-weight: 600; }
+.carrossel__controles { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 28px; }
+.setas { display: flex; gap: 10px; }
+.seta { width: 48px; height: 48px; }
+.seta[disabled] { opacity: .35; cursor: default; }
+.aviso-depo { font-size: .8rem; color: var(--nevoa); margin-top: 18px; max-width: 70ch; }
+
+/* ===== FAQ ===== */
+.faq__grade { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 88px); }
+.faq__grade > * { min-width: 0; }
+.perguntas { border-top: 1px solid var(--linha); }
+.perguntas details { border-bottom: 1px solid var(--linha); }
+.perguntas summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding-block: 22px; font-weight: 600; font-size: 1.05rem;
+}
+.perguntas summary::-webkit-details-marker { display: none; }
+.perguntas summary::after {
+  content: ""; flex: none; width: 12px; height: 12px;
+  border-right: 1.5px solid var(--azul); border-bottom: 1.5px solid var(--azul);
+  transform: rotate(45deg) translate(-3px, -3px); transition: transform .25s;
+}
+.perguntas details[open] summary::after { transform: rotate(225deg) translate(-3px, -3px); }
+.perguntas details p { padding: 0 32px 24px 0; color: var(--cinza); max-width: 62ch; }
+@media (max-width: 860px) { .faq__grade { grid-template-columns: 1fr; } }
+
+/* ===== Contato ===== */
+.contato__grade { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 72px); }
+.contato__grade > * { min-width: 0; }
+.status {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px; border-radius: 999px; font-size: .88rem; font-weight: 600;
+  background: rgba(255, 255, 255, .06); border: 1px solid var(--linha-escura);
+}
+.status i { width: 9px; height: 9px; border-radius: 50%; background: var(--nevoa); }
+.status.aberto i { background: #5BC48A; box-shadow: 0 0 0 4px rgba(91, 196, 138, .18); }
+.status.fechado i { background: #D98A6A; }
+.horarios { margin-top: 24px; border-top: 1px solid var(--linha-escura); }
+.horarios div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--linha-escura); color: var(--nevoa); font-variant-numeric: tabular-nums; }
+.horarios div.hoje { color: var(--branco); font-weight: 600; }
+.horarios div.hoje dt::after { content: " · hoje"; color: var(--caramelo); font-weight: 500; }
+.horarios dd { margin: 0; }
+.nota-horario { font-size: .82rem; color: var(--nevoa); margin-top: 14px; }
+.dados { display: grid; gap: 0; border-top: 1px solid var(--linha-escura); }
+.dado { display: grid; gap: 4px; padding-block: 18px; border-bottom: 1px solid var(--linha-escura); }
+.dado dt { font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--caramelo); }
+.dado dd { margin: 0; font-size: 1.05rem; user-select: text; }
+.dado dd a { text-decoration: none; border-bottom: 1px solid var(--linha-escura); }
+.dado dd a:hover { border-bottom-color: var(--caramelo); }
+.contato .acoes { margin-top: 28px; }
+@media (max-width: 860px) { .contato__grade { grid-template-columns: 1fr; } }
+
+/* ===== Fechamento ===== */
+.fecho { text-align: left; }
+.fecho__caixa { display: grid; grid-template-columns: 1.4fr auto; gap: 32px; align-items: end; padding-block: clamp(48px, 7vw, 80px); border-top: 1px solid var(--linha); }
+.fecho__caixa > * { min-width: 0; }
+.fecho .titulo { font-size: clamp(2rem, 5vw, 3.4rem); }
+.fecho p { color: var(--cinza); margin-top: 16px; max-width: 54ch; }
+.fecho small { display: block; margin-top: 12px; color: var(--cinza); font-size: .82rem; text-align: right; }
+@media (max-width: 760px) { .fecho__caixa { grid-template-columns: 1fr; } .fecho small { text-align: left; } }
+
+/* ===== Rodapé ===== */
+.rodape { background: var(--noite); color: var(--nevoa); padding-block: 56px calc(48px + env(safe-area-inset-bottom, 0px)); font-size: .88rem; }
+.rodape__grade { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
+.rodape__grade > * { min-width: 0; }
+.rodape h4 { margin: 0 0 12px; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--caramelo); font-weight: 600; }
+.rodape ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.rodape a { text-decoration: none; }
+.rodape a:hover { color: var(--branco); }
+.rodape .marca strong { color: var(--branco); }
+.rodape__legal { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--linha-escura); display: grid; gap: 8px; font-size: .78rem; }
+@media (max-width: 760px) { .rodape__grade { grid-template-columns: 1fr; } }
+
+/* ===== WhatsApp fixo ===== */
+.whats-fixo {
+  position: fixed; z-index: 55;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 56px; padding: 0 22px 0 18px; border-radius: 999px;
+  background: var(--azul); color: var(--branco); text-decoration: none;
+  font-weight: 600; font-size: .95rem;
+  box-shadow: 0 10px 30px rgba(8, 17, 29, .35);
+  transition: background-color .2s, transform .3s, opacity .3s;
+}
+.whats-fixo.escondido { opacity: 0; transform: translateY(16px); pointer-events: none; }
+.whats-fixo:hover { background: var(--azul-hover); transform: translateY(-2px); }
+.whats-fixo svg { width: 24px; height: 24px; }
+@media (max-width: 520px) {
+  .whats-fixo { padding: 0 18px 0 16px; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ===== Blog ===== */
+.topo { transform: none; }
+.menu a[aria-current="page"] { color: var(--branco); }
+.blog-topo { padding-block: calc(68px + clamp(56px, 8vw, 96px)) clamp(48px, 7vw, 80px); background: var(--noite); color: var(--branco); position: relative; overflow: hidden; isolation: isolate; }
+.blog-topo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(45% 70% at 85% 20%, rgba(54, 97, 150, .45), transparent 70%), radial-gradient(30% 40% at 95% 0%, rgba(184, 135, 105, .14), transparent 70%); }
+.blog-topo h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4.4rem); line-height: 1.04; letter-spacing: -.015em; max-width: 16ch; margin-top: 18px; }
+.blog-topo h1 em { font-style: italic; color: var(--azul-claro); }
+.blog-topo .lead { color: var(--nevoa); margin-top: 20px; }
+.busca { margin-top: 32px; max-width: 560px; position: relative; }
+.busca label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.busca input {
+  width: 100%; min-height: 54px; padding: 14px 20px; border-radius: 999px;
+  border: 1px solid var(--linha-escura); background: rgba(255, 255, 255, .06); color: var(--branco);
+  font: 500 1rem var(--f-texto);
+}
+.busca input::placeholder { color: var(--nevoa); }
+.busca input:focus { outline: 2px solid var(--caramelo); outline-offset: 2px; }
+.chips-rolagem { overflow-x: auto; scrollbar-width: none; margin-top: 20px; padding-bottom: 4px; }
+.chips-rolagem::-webkit-scrollbar { display: none; }
+.chips { display: flex; gap: 8px; width: max-content; }
+.chip {
+  appearance: none; cursor: pointer; white-space: nowrap; min-height: 40px; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--linha-escura); background: transparent; color: var(--nevoa); font: 600 .85rem var(--f-texto);
+}
+.chip[aria-pressed="true"] { background: var(--branco); color: var(--noite); border-color: var(--branco); }
+.chip:not([aria-pressed="true"]):hover { color: var(--branco); border-color: var(--nevoa); }
+
+.indice { padding-block: clamp(48px, 7vw, 80px); }
+.indice__cab { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.indice__cab h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.indice__cab span { color: var(--cinza); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.card-art {
+  display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  padding: 24px; background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio);
+  text-decoration: none; transition: border-color .2s, transform .2s;
+}
+.card-art:hover { border-color: var(--azul); transform: translateY(-2px); }
+.card-art__cat { font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--azul); }
+.card-art strong { font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; line-height: 1.25; color: var(--tinta); }
+.card-art__res { color: var(--cinza); font-size: .93rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card-art__meta { margin-top: auto; padding-top: 6px; font-size: .8rem; color: var(--cinza); }
+.vazio { padding: 32px 0; color: var(--cinza); }
+
+.artigos { background: var(--branco); }
+.artigo { max-width: 760px; margin-inline: auto; padding-block: clamp(56px, 8vw, 96px); border-top: 1px solid var(--linha); scroll-margin-top: 72px; }
+.artigo:first-child { border-top: 0; }
+.artigo__topo { display: grid; gap: 14px; margin-bottom: 28px; }
+.artigo__topo h2 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 4.4vw, 2.8rem); line-height: 1.1; letter-spacing: -.01em; }
+.artigo__meta { font-size: .82rem; color: var(--cinza); }
+.artigo h3 { font-family: var(--f-texto); font-weight: 700; font-size: 1.12rem; margin: 36px 0 12px; }
+.artigo p { color: #2B3646; max-width: 68ch; }
+.artigo p + p { margin-top: 14px; }
+.artigo ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; color: #2B3646; }
+.artigo ul li::marker { color: var(--caramelo); }
+.lista-check { list-style: none; padding-left: 0 !important; }
+.lista-check li { position: relative; padding-left: 30px; }
+.lista-check li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 12px; height: 7px; border-left: 2px solid var(--azul); border-bottom: 2px solid var(--azul); transform: rotate(-45deg); }
+.resumo { background: var(--papel); border-left: 2px solid var(--caramelo); padding: 18px 22px; font-size: 1.05rem; }
+.ficha { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--linha); border: 1px solid var(--linha); margin: 24px 0 8px; border-radius: var(--raio); overflow: hidden; }
+.ficha div { background: var(--branco); padding: 14px 16px; min-width: 0; }
+.ficha dt { font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--cinza); margin-bottom: 4px; }
+.ficha dd { margin: 0; font-size: .92rem; font-weight: 600; color: var(--tinta); }
+@media (max-width: 640px) { .ficha { grid-template-columns: 1fr; } }
+.nota-art { margin-top: 16px; padding: 14px 18px; border: 1px solid var(--linha); border-radius: var(--raio); font-size: .95rem; }
+.linha-tempo { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--caramelo); display: grid; gap: 18px; }
+.linha-tempo li { position: relative; padding-left: 22px; display: grid; gap: 2px; }
+.linha-tempo li::before { content: ""; position: absolute; left: -5px; top: .5em; width: 9px; height: 9px; border-radius: 50%; background: var(--caramelo); }
+.linha-tempo strong { font-size: .95rem; }
+.linha-tempo span { color: #2B3646; }
+.duvidas { margin: 0; display: grid; gap: 16px; }
+.duvidas dt { font-weight: 700; }
+.duvidas dd { margin: 4px 0 0; color: #2B3646; }
+.cta-art { margin-top: 40px; padding: 26px; background: var(--noite); color: var(--branco); border-radius: var(--raio); display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+.cta-art p { color: var(--nevoa) !important; max-width: 40ch; }
+.aviso-art { margin-top: 18px; font-size: .8rem; color: var(--cinza) !important; }
+.voltar { display: inline-block; margin-top: 18px; font-size: .88rem; font-weight: 600; color: var(--azul); text-decoration: none; }
+.voltar::before { content: "↑ "; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-msg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3.5c-4.7 0-8.5 3.4-8.5 7.6 0 2.2 1 4.1 2.7 5.5L5.5 20.5l4.1-1.9c.8.2 1.6.3 2.4.3 4.7 0 8.5-3.4 8.5-7.7S16.7 3.5 12 3.5Z"/><path fill="currentColor" d="M8.2 11.2a1.1 1.1 0 1 0 0 .01Zm3.8 0a1.1 1.1 0 1 0 0 .01Zm3.8 0a1.1 1.1 0 1 0 0 .01Z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-volta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m5-5-5 5 5 5"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path fill="currentColor" d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1L3.2 9.4l6.1-.8Z"/></symbol>
+  <symbol id="i-ponto" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 12h16"/><circle cx="12" cy="12" r="3" fill="currentColor"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></symbol>
+</svg>
+
+<header class="topo visivel" id="topo" aria-label="Navegação">
+  <div class="wrap topo__barra">
+    <a class="marca" href="index.html"><strong>Dr. Iuri Zolini</strong><small>Cirurgião Plástico</small></a>
+    <nav class="menu" aria-label="Páginas">
+      <a href="index.html">Início</a>
+      <a href="index.html#procedimentos">Procedimentos</a>
+      <a href="index.html#avaliacoes">Avaliações</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="topo__acoes">
+      <a class="icone-btn" href="https://www.instagram.com/driurizolini/" target="_blank" rel="noopener" aria-label="Instagram @driurizolini"><svg><use href="#i-cam"/></svg></a>
+      <a class="btn btn--whats" data-wa="Olá! Vim pelo blog e gostaria de agendar uma consulta com o Dr. Iuri Zolini." href="https://wa.me/5531998900878" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp"><svg><use href="#i-msg"/></svg><span>Agendar consulta</span></a>
+      <button class="icone-btn so-mobile" type="button" id="abrir-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="gaveta"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="gaveta" id="gaveta" hidden>
+  <div class="gaveta__topo">
+    <span class="marca"><strong>Dr. Iuri Zolini</strong><small>Cirurgião Plástico</small></span>
+    <button class="icone-btn" type="button" id="fechar-menu" aria-label="Fechar menu"><svg><use href="#i-fechar"/></svg></button>
+  </div>
+  <nav aria-label="Páginas">
+    <a href="index.html">Início</a>
+    <a href="index.html#procedimentos">Procedimentos</a>
+    <a href="index.html#avaliacoes">Avaliações</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+  <a class="btn btn--whats" data-wa="Olá! Vim pelo blog e gostaria de agendar uma consulta com o Dr. Iuri Zolini." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar pelo WhatsApp</a>
+</div>
+
+<main>
+  <section class="blog-topo" aria-labelledby="t-blog">
+    <div class="wrap">
+      <span class="rotulo">Blog</span>
+      <h1 id="t-blog">Cirurgia plástica <em>explicada</em> por quem opera.</h1>
+      <p class="lead">O que cada procedimento melhora, para quem é indicado, como é a recuperação e quais são os riscos. Artigos escritos e revisados pelo Dr. Iuri Zolini, cirurgião plástico em Conselheiro Lafaiete (MG).</p>
+      <div class="busca">
+        <label for="busca">Buscar no blog</label>
+        <input id="busca" type="search" placeholder="Busque por procedimento ou dúvida" autocomplete="off">
+      </div>
+      <div class="chips-rolagem"><div class="chips" id="chips" role="group" aria-label="Filtrar por tema"><button class="chip" type="button" data-f="todos" aria-pressed="true">Todos</button><button class="chip" type="button" data-f="Corpo e contorno" aria-pressed="false">Corpo e contorno</button><button class="chip" type="button" data-f="Mamas" aria-pressed="false">Mamas</button><button class="chip" type="button" data-f="Face" aria-pressed="false">Face</button><button class="chip" type="button" data-f="Masculino" aria-pressed="false">Masculino</button><button class="chip" type="button" data-f="Íntima" aria-pressed="false">Íntima</button><button class="chip" type="button" data-f="Preparo e recuperação" aria-pressed="false">Preparo e recuperação</button><button class="chip" type="button" data-f="Segurança" aria-pressed="false">Segurança</button><button class="chip" type="button" data-f="Tecnologia" aria-pressed="false">Tecnologia</button><button class="chip" type="button" data-f="Mitos e verdades" aria-pressed="false">Mitos e verdades</button></div></div>
+    </div>
+  </section>
+
+  <section class="indice" id="indice" aria-labelledby="t-indice">
+    <div class="wrap">
+      <div class="indice__cab"><h2 id="t-indice">Artigos</h2><span id="contagem">24 artigos</span></div>
+      <div class="cards" id="cards">
+      <a class="card-art" href="#lipoescultura" data-cat="Corpo e contorno" data-busca="lipoescultura: o que é, o que melhora e como é a recuperação a lipoescultura remove gordura localizada que não sai com dieta e exercício e redesenha o contorno do corpo. não é um tratamento para emagrecer: funciona melhor em quem está próximo do peso ideal. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Lipoescultura: o que é, o que melhora e como é a recuperação</strong>
+        <span class="card-art__res">A lipoescultura remove gordura localizada que não sai com dieta e exercício e redesenha o contorno do corpo. Não é um tratamento para emagrecer: funciona melhor em quem está próximo do peso ideal.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#lipo-hd" data-cat="Corpo e contorno" data-busca="lipo hd: definição muscular com naturalidade a lipo hd é uma lipoescultura que, além de retirar gordura, realça o desenho natural da musculatura. é indicada para quem já tem pouca gordura e boa pele, e exige um pós-operatório disciplinado. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Lipo HD: definição muscular com naturalidade</strong>
+        <span class="card-art__res">A lipo HD é uma lipoescultura que, além de retirar gordura, realça o desenho natural da musculatura. É indicada para quem já tem pouca gordura e boa pele, e exige um pós-operatório disciplinado.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#lipo-retracao" data-cat="Corpo e contorno" data-busca="lipo com tecnologias de retração: vibrofit e argoplasma algumas tecnologias podem ser associadas à lipo para facilitar a retirada de gordura e estimular a retração da pele. elas ajudam em casos de flacidez leve a moderada, mas não substituem a retirada de pele quando há sobra. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Lipo com tecnologias de retração: Vibrofit e Argoplasma</strong>
+        <span class="card-art__res">Algumas tecnologias podem ser associadas à lipo para facilitar a retirada de gordura e estimular a retração da pele. Elas ajudam em casos de flacidez leve a moderada, mas não substituem a retirada de pele quando há sobra.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#lipoabdominoplastia" data-cat="Corpo e contorno" data-busca="lipoabdominoplastia: abdômen mais firme e cintura desenhada a lipoabdominoplastia une a retirada do excesso de pele do abdômen, a correção da diástase e a lipoaspiração da cintura e dos flancos. é indicada principalmente depois de gestações ou de grande perda de peso. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Lipoabdominoplastia: abdômen mais firme e cintura desenhada</strong>
+        <span class="card-art__res">A lipoabdominoplastia une a retirada do excesso de pele do abdômen, a correção da diástase e a lipoaspiração da cintura e dos flancos. É indicada principalmente depois de gestações ou de grande perda de peso.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#miniabdominoplastia" data-cat="Corpo e contorno" data-busca="miniabdominoplastia: quando a sobra de pele é pequena a miniabdominoplastia trata o excesso de pele e gordura abaixo do umbigo, com cicatriz menor e recuperação mais rápida que a abdominoplastia completa. serve para casos selecionados. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Miniabdominoplastia: quando a sobra de pele é pequena</strong>
+        <span class="card-art__res">A miniabdominoplastia trata o excesso de pele e gordura abaixo do umbigo, com cicatriz menor e recuperação mais rápida que a abdominoplastia completa. Serve para casos selecionados.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#harmonizacao-glutea" data-cat="Corpo e contorno" data-busca="harmonização glútea: contorno e proporção a harmonização glútea melhora o formato e a proporção da região dos glúteos em relação à cintura e às coxas. o plano pode combinar lipoescultura, enxerto da própria gordura e outras técnicas, conforme o caso. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Harmonização glútea: contorno e proporção</strong>
+        <span class="card-art__res">A harmonização glútea melhora o formato e a proporção da região dos glúteos em relação à cintura e às coxas. O plano pode combinar lipoescultura, enxerto da própria gordura e outras técnicas, conforme o caso.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#diastase-abdominal" data-cat="Corpo e contorno" data-busca="diástase abdominal: o vilão quase invisível do contorno diástase é o afastamento dos músculos retos do abdômen, comum depois da gestação. ela deixa a barriga projetada mesmo em quem está magra e não melhora com abdominais. corpo e contorno">
+        <span class="card-art__cat">Corpo e contorno</span>
+        <strong>Diástase abdominal: o vilão quase invisível do contorno</strong>
+        <span class="card-art__res">Diástase é o afastamento dos músculos retos do abdômen, comum depois da gestação. Ela deixa a barriga projetada mesmo em quem está magra e não melhora com abdominais.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#mamoplastia-aumento" data-cat="Mamas" data-busca="prótese de silicone: aumento das mamas com proporção a mamoplastia de aumento usa implantes de silicone para aumentar o volume e melhorar o contorno das mamas. tamanho, formato e posição são escolhidos de acordo com o corpo, não com um número. mamas">
+        <span class="card-art__cat">Mamas</span>
+        <strong>Prótese de silicone: aumento das mamas com proporção</strong>
+        <span class="card-art__res">A mamoplastia de aumento usa implantes de silicone para aumentar o volume e melhorar o contorno das mamas. Tamanho, formato e posição são escolhidos de acordo com o corpo, não com um número.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#mastopexia-protese" data-cat="Mamas" data-busca="mastopexia com prótese: elevação e volume a mastopexia com prótese reposiciona as mamas caídas e devolve volume ao colo. é muito procurada depois de gestações, amamentação e emagrecimento. mamas">
+        <span class="card-art__cat">Mamas</span>
+        <strong>Mastopexia com prótese: elevação e volume</strong>
+        <span class="card-art__res">A mastopexia com prótese reposiciona as mamas caídas e devolve volume ao colo. É muito procurada depois de gestações, amamentação e emagrecimento.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#mamoplastia-redutora" data-cat="Mamas" data-busca="mamoplastia redutora: mais conforto no dia a dia a redução das mamas retira excesso de pele, gordura e glândula para aliviar o peso, melhorar a postura e equilibrar a proporção do corpo. mamas">
+        <span class="card-art__cat">Mamas</span>
+        <strong>Mamoplastia redutora: mais conforto no dia a dia</strong>
+        <span class="card-art__res">A redução das mamas retira excesso de pele, gordura e glândula para aliviar o peso, melhorar a postura e equilibrar a proporção do corpo.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#assimetria-mamaria" data-cat="Mamas" data-busca="correção de assimetria mamária é comum uma mama ser diferente da outra. quando a diferença incomoda, a cirurgia equilibra tamanho, formato e posição, com técnicas escolhidas para cada lado. mamas">
+        <span class="card-art__cat">Mamas</span>
+        <strong>Correção de assimetria mamária</strong>
+        <span class="card-art__res">É comum uma mama ser diferente da outra. Quando a diferença incomoda, a cirurgia equilibra tamanho, formato e posição, com técnicas escolhidas para cada lado.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#lifting-facial" data-cat="Face" data-busca="lifting facial: rejuvenescimento com expressão natural o lifting reposiciona os tecidos do rosto e do pescoço que caíram com o tempo. a proposta é um rosto descansado, que continue parecendo com você. face">
+        <span class="card-art__cat">Face</span>
+        <strong>Lifting facial: rejuvenescimento com expressão natural</strong>
+        <span class="card-art__res">O lifting reposiciona os tecidos do rosto e do pescoço que caíram com o tempo. A proposta é um rosto descansado, que continue parecendo com você.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#lipo-papada" data-cat="Face" data-busca="lipo de papada: contorno do pescoço a lipo de papada remove a gordura localizada abaixo do queixo e define o ângulo entre o rosto e o pescoço, com incisão mínima e recuperação rápida. face">
+        <span class="card-art__cat">Face</span>
+        <strong>Lipo de papada: contorno do pescoço</strong>
+        <span class="card-art__res">A lipo de papada remove a gordura localizada abaixo do queixo e define o ângulo entre o rosto e o pescoço, com incisão mínima e recuperação rápida.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#blefaroplastia" data-cat="Face" data-busca="blefaroplastia: olhar mais descansado a blefaroplastia trata o excesso de pele e as bolsas das pálpebras superiores e inferiores. o resultado é um olhar mais descansado, sem mudar a sua expressão. face">
+        <span class="card-art__cat">Face</span>
+        <strong>Blefaroplastia: olhar mais descansado</strong>
+        <span class="card-art__res">A blefaroplastia trata o excesso de pele e as bolsas das pálpebras superiores e inferiores. O resultado é um olhar mais descansado, sem mudar a sua expressão.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#otoplastia" data-cat="Face" data-busca="otoplastia: correção das orelhas de abano a otoplastia aproxima as orelhas da cabeça e corrige dobras da cartilagem. pode ser feita a partir dos 5 ou 6 anos de idade e também em adultos. face">
+        <span class="card-art__cat">Face</span>
+        <strong>Otoplastia: correção das orelhas de abano</strong>
+        <span class="card-art__res">A otoplastia aproxima as orelhas da cabeça e corrige dobras da cartilagem. Pode ser feita a partir dos 5 ou 6 anos de idade e também em adultos.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#ginecomastia" data-cat="Masculino" data-busca="ginecomastia: tórax masculino mais plano ginecomastia é o aumento das mamas no homem, por glândula, gordura ou ambos. a cirurgia remove esse excesso e devolve o contorno masculino do peitoral. masculino">
+        <span class="card-art__cat">Masculino</span>
+        <strong>Ginecomastia: tórax masculino mais plano</strong>
+        <span class="card-art__res">Ginecomastia é o aumento das mamas no homem, por glândula, gordura ou ambos. A cirurgia remove esse excesso e devolve o contorno masculino do peitoral.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#ninfoplastia" data-cat="Íntima" data-busca="ninfoplastia: conforto e autoestima íntima a ninfoplastia reduz e harmoniza os pequenos lábios vaginais. muitas mulheres procuram a cirurgia por desconforto ao vestir, praticar esportes ou nas relações. íntima">
+        <span class="card-art__cat">Íntima</span>
+        <strong>Ninfoplastia: conforto e autoestima íntima</strong>
+        <span class="card-art__res">A ninfoplastia reduz e harmoniza os pequenos lábios vaginais. Muitas mulheres procuram a cirurgia por desconforto ao vestir, praticar esportes ou nas relações.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#preparo-cirurgia" data-cat="Preparo e recuperação" data-busca="como se preparar nos 30 dias antes da cirurgia uma boa preparação reduz riscos e deixa a recuperação mais tranquila. estes são os cuidados mais comuns; as orientações finais são sempre as da sua equipe. preparo e recuperação">
+        <span class="card-art__cat">Preparo e recuperação</span>
+        <strong>Como se preparar nos 30 dias antes da cirurgia</strong>
+        <span class="card-art__res">Uma boa preparação reduz riscos e deixa a recuperação mais tranquila. Estes são os cuidados mais comuns; as orientações finais são sempre as da sua equipe.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#pos-operatorio" data-cat="Preparo e recuperação" data-busca="pós-operatório: o que esperar e quando avisar a equipe inchaço, manchas roxas e cansaço nos primeiros dias são esperados. saber o que é normal e o que é sinal de alerta deixa a recuperação mais segura. preparo e recuperação">
+        <span class="card-art__cat">Preparo e recuperação</span>
+        <strong>Pós-operatório: o que esperar e quando avisar a equipe</strong>
+        <span class="card-art__res">Inchaço, manchas roxas e cansaço nos primeiros dias são esperados. Saber o que é normal e o que é sinal de alerta deixa a recuperação mais segura.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#cicatrizes" data-cat="Preparo e recuperação" data-busca="cicatriz de cirurgia plástica: como cuidar toda cirurgia deixa cicatriz. o cirurgião planeja onde ela fica; o cuidado depois ajuda a deixá-la mais discreta. a cicatriz amadurece por 12 a 18 meses. preparo e recuperação">
+        <span class="card-art__cat">Preparo e recuperação</span>
+        <strong>Cicatriz de cirurgia plástica: como cuidar</strong>
+        <span class="card-art__res">Toda cirurgia deixa cicatriz. O cirurgião planeja onde ela fica; o cuidado depois ajuda a deixá-la mais discreta. A cicatriz amadurece por 12 a 18 meses.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#cirurgias-combinadas" data-cat="Preparo e recuperação" data-busca="posso fazer mais de um procedimento na mesma cirurgia? em muitos casos, sim, como mamas e abdômen juntos depois da gestação. a decisão depende da sua saúde, do tempo total de cirurgia e da segurança da recuperação. preparo e recuperação">
+        <span class="card-art__cat">Preparo e recuperação</span>
+        <strong>Posso fazer mais de um procedimento na mesma cirurgia?</strong>
+        <span class="card-art__res">Em muitos casos, sim, como mamas e abdômen juntos depois da gestação. A decisão depende da sua saúde, do tempo total de cirurgia e da segurança da recuperação.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#como-escolher-cirurgiao" data-cat="Segurança" data-busca="como escolher um cirurgião plástico com segurança antes de olhar fotos e preços, confira três coisas: o registro no crm, o rqe em cirurgia plástica e onde a cirurgia vai ser feita. isso leva cinco minutos e faz muita diferença. segurança">
+        <span class="card-art__cat">Segurança</span>
+        <strong>Como escolher um cirurgião plástico com segurança</strong>
+        <span class="card-art__res">Antes de olhar fotos e preços, confira três coisas: o registro no CRM, o RQE em Cirurgia Plástica e onde a cirurgia vai ser feita. Isso leva cinco minutos e faz muita diferença.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#tecnologias" data-cat="Tecnologia" data-busca="vibrofit e argoplasma: as tecnologias usadas no contorno corporal tecnologia não substitui técnica, mas pode ajudar. entenda para que servem as duas ferramentas que o dr. iuri usa nas cirurgias de contorno, quando indicadas. tecnologia">
+        <span class="card-art__cat">Tecnologia</span>
+        <strong>Vibrofit e Argoplasma: as tecnologias usadas no contorno corporal</strong>
+        <span class="card-art__res">Tecnologia não substitui técnica, mas pode ajudar. Entenda para que servem as duas ferramentas que o Dr. Iuri usa nas cirurgias de contorno, quando indicadas.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      <a class="card-art" href="#mitos-verdades" data-cat="Mitos e verdades" data-busca="mitos e verdades sobre cirurgia plástica algumas ideias sobre cirurgia plástica circulam há anos e não correspondem à realidade. veja as dúvidas mais comuns respondidas de forma direta. mitos e verdades">
+        <span class="card-art__cat">Mitos e verdades</span>
+        <strong>Mitos e verdades sobre cirurgia plástica</strong>
+        <span class="card-art__res">Algumas ideias sobre cirurgia plástica circulam há anos e não correspondem à realidade. Veja as dúvidas mais comuns respondidas de forma direta.</span>
+        <span class="card-art__meta">2 min de leitura</span>
+      </a>
+      </div>
+      <p class="vazio" id="vazio" hidden>Nenhum artigo encontrado. Tente outra palavra ou fale com a equipe pelo WhatsApp.</p>
+    </div>
+  </section>
+
+  <section class="artigos" aria-label="Artigos completos">
+    <div class="wrap" id="lista-artigos">
+    <article class="artigo" id="lipoescultura" data-cat="Corpo e contorno" data-busca="lipoescultura: o que é, o que melhora e como é a recuperação a lipoescultura remove gordura localizada que não sai com dieta e exercício e redesenha o contorno do corpo. não é um tratamento para emagrecer: funciona melhor em quem está próximo do peso ideal. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Lipoescultura: o que é, o que melhora e como é a recuperação</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A lipoescultura remove gordura localizada que não sai com dieta e exercício e redesenha o contorno do corpo. Não é um tratamento para emagrecer: funciona melhor em quem está próximo do peso ideal.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural ou raquianestesia com sedação, ou anestesia geral, conforme a extensão</dd></div>
+        <div><dt>Duração</dt><dd>2 a 4 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>Lipoescultura é a lipoaspiração feita com intenção de desenho: além de retirar a gordura, o cirurgião modela as curvas e as transições entre as regiões do corpo, como cintura, quadril e costas. A gordura é retirada por cânulas finas, introduzidas por pequenas incisões escondidas em dobras naturais.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Gordura localizada em abdômen, flancos (&quot;pneuzinhos&quot;), costas, culote, coxas, braços e papada</li><li>Contorno da cintura e proporção entre tronco e quadril</li><li>Caimento das roupas em regiões que não respondem à dieta</li><li>Quando indicado, a gordura retirada pode ser aproveitada como enxerto em outra região</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Pessoas com peso estável e próximo do ideal</li><li>Pele com boa elasticidade</li><li>Gordura localizada que persiste apesar de alimentação e atividade física</li><li>Boa saúde geral e expectativas realistas</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Não é indicada para tratar obesidade, celulite ou flacidez importante de pele. Quando há sobra de pele, outras técnicas (como a abdominoplastia) podem ser necessárias.</p>
+      <h3>Como é feita</h3>
+      <p>A região é infiltrada com um líquido que reduz o sangramento e, em seguida, a gordura é aspirada por cânulas finas. No Brasil, o Conselho Federal de Medicina limita o volume retirado em uma cirurgia (até 7% do peso corporal com a técnica infiltrativa) e a área tratada, por segurança.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Inchaço e manchas roxas são esperados. Caminhar dentro de casa desde o primeiro dia ajuda a circulação.</span></li><li><strong>2 a 3 semanas</strong><span>Retorno a atividades leves e ao trabalho que não exige esforço.</span></li><li><strong>4 a 6 semanas</strong><span>Liberação gradual para exercícios. A malha ou cinta compressiva costuma ser usada por 30 a 60 dias.</span></li><li><strong>3 a 6 meses</strong><span>O inchaço residual vai embora e o contorno final aparece.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Pequenas incisões de poucos milímetros, posicionadas em dobras, no umbigo ou na linha da calcinha, que tendem a ficar discretas.</p>
+      <h3>Riscos</h3>
+      <p>Seroma (acúmulo de líquido), irregularidades na pele, alterações de sensibilidade temporárias, infecção e, raramente, trombose e embolia. A avaliação pré-operatória e o respeito aos limites de volume reduzem esses riscos.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>A gordura volta?</dt><dd>As células retiradas não voltam, mas as que ficam podem aumentar se houver ganho de peso. Manter o peso estável preserva o resultado.</dd></div><div><dt>Lipoescultura emagrece?</dt><dd>Não. A perda na balança é pequena; o ganho está no contorno e nas medidas.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lipoescultura no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="lipo-hd" data-cat="Corpo e contorno" data-busca="lipo hd: definição muscular com naturalidade a lipo hd é uma lipoescultura que, além de retirar gordura, realça o desenho natural da musculatura. é indicada para quem já tem pouca gordura e boa pele, e exige um pós-operatório disciplinado. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Lipo HD: definição muscular com naturalidade</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A lipo HD é uma lipoescultura que, além de retirar gordura, realça o desenho natural da musculatura. É indicada para quem já tem pouca gordura e boa pele, e exige um pós-operatório disciplinado.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural ou raquianestesia com sedação, ou anestesia geral</dd></div>
+        <div><dt>Duração</dt><dd>3 a 5 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Uma noite, na maioria dos casos</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>Na lipo HD (alta definição), o cirurgião trabalha em camadas: retira a gordura mais profunda e, na camada superficial, deixa áreas com mais ou menos gordura para evidenciar as linhas naturais do abdômen, da cintura e, em homens, do peitoral e dos braços. O objetivo é um desenho atlético coerente com o corpo de cada pessoa.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Definição das linhas do abdômen e da cintura</li><li>Contorno de flancos, costas e braços</li><li>Em homens, desenho do peitoral e do abdômen</li><li>Proporção geral do tronco</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Pessoas com baixo percentual de gordura e peso estável</li><li>Pele firme, sem flacidez importante</li><li>Quem pratica atividade física e quer realçar o que já conquistou</li><li>Quem entende que o resultado depende também dos hábitos depois da cirurgia</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Não é indicada para quem tem muita gordura ou flacidez, porque a definição pode parecer artificial ou irregular. Nesses casos, a lipoescultura tradicional costuma ser o melhor caminho.</p>
+      <h3>Como é feita</h3>
+      <p>A técnica é semelhante à da lipoescultura, com marcação detalhada da musculatura antes da cirurgia e trabalho em diferentes profundidades. Pode ser associada a tecnologias que auxiliam a retirada de gordura e a retração da pele.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Inchaço mais intenso que na lipo tradicional; repouso relativo e caminhadas curtas.</span></li><li><strong>2 a 4 semanas</strong><span>Retorno ao trabalho leve; drenagem e cuidados indicados pela equipe.</span></li><li><strong>4 a 8 semanas</strong><span>Volta gradual aos treinos, começando pelos mais leves. Malha compressiva por 30 a 60 dias.</span></li><li><strong>3 a 6 meses</strong><span>A definição fica mais nítida conforme o inchaço diminui.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Pequenas incisões, semelhantes às da lipoescultura, em pontos escondidos.</p>
+      <h3>Riscos</h3>
+      <p>Os mesmos da lipoescultura, com atenção especial a irregularidades e a uma definição exagerada. Por isso a indicação precisa é tão importante.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Preciso treinar depois?</dt><dd>Sim. Manter atividade física e alimentação equilibrada ajuda a preservar a definição.</dd></div><div><dt>Fica artificial?</dt><dd>O objetivo é seguir a anatomia de cada pessoa. A indicação correta é o que evita um resultado exagerado.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lipo HD no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="lipo-retracao" data-cat="Corpo e contorno" data-busca="lipo com tecnologias de retração: vibrofit e argoplasma algumas tecnologias podem ser associadas à lipo para facilitar a retirada de gordura e estimular a retração da pele. elas ajudam em casos de flacidez leve a moderada, mas não substituem a retirada de pele quando há sobra. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Lipo com tecnologias de retração: Vibrofit e Argoplasma</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Algumas tecnologias podem ser associadas à lipo para facilitar a retirada de gordura e estimular a retração da pele. Elas ajudam em casos de flacidez leve a moderada, mas não substituem a retirada de pele quando há sobra.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>A mesma da lipoescultura</dd></div>
+        <div><dt>Duração</dt><dd>Acrescenta algum tempo à lipo, conforme as áreas tratadas</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>O Dr. Iuri utiliza, quando indicado, duas tecnologias junto da lipoescultura. O Vibrofit é um sistema de lipoaspiração assistida, em que a cânula vibra e facilita a retirada da gordura com mais precisão. O Argoplasma usa energia de plasma (gás argônio ionizado), aplicada por baixo da pele, para estimular a contração do tecido e melhorar a firmeza.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Retração da pele em áreas tratadas com lipo</li><li>Uniformidade do contorno</li><li>Flacidez leve a moderada em abdômen, braços, coxas e papada</li><li>Precisão na retirada de gordura em áreas delicadas</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Quem tem gordura localizada com alguma flacidez de pele</li><li>Pacientes que querem evitar cicatrizes maiores quando a sobra de pele é pequena</li><li>Áreas como abdômen, braços, coxas internas e pescoço</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quando existe sobra importante de pele (por exemplo, depois de gestações ou grande perda de peso), a tecnologia sozinha não resolve, e a retirada de pele pode ser necessária.</p>
+      <h3>Como é feita</h3>
+      <p>Primeiro é feita a lipoescultura, com ou sem o auxílio do Vibrofit. Em seguida, o Argoplasma é aplicado pelas mesmas pequenas incisões, sob a pele, nas regiões com flacidez. Não há cortes adicionais.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeiras semanas</strong><span>Semelhante à lipoescultura; a pele pode ficar mais endurecida e sensível no início.</span></li><li><strong>1 a 3 meses</strong><span>A pele vai se acomodando e ganhando firmeza.</span></li><li><strong>6 meses ou mais</strong><span>A retração continua acontecendo aos poucos; o resultado final leva mais tempo para aparecer.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>As mesmas pequenas incisões da lipo.</p>
+      <h3>Riscos</h3>
+      <p>Além dos riscos da lipoescultura, pode haver endurecimentos temporários e, raramente, queimaduras ou irregularidades. A técnica exige experiência e indicação cuidadosa.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Substitui a abdominoplastia?</dt><dd>Não. Ajuda quando a flacidez é leve a moderada; quando sobra pele, a abdominoplastia continua sendo a melhor opção.</dd></div><div><dt>Dói mais?</dt><dd>O desconforto é parecido com o da lipo e é controlado com medicação.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lipo com tecnologias de retração no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="lipoabdominoplastia" data-cat="Corpo e contorno" data-busca="lipoabdominoplastia: abdômen mais firme e cintura desenhada a lipoabdominoplastia une a retirada do excesso de pele do abdômen, a correção da diástase e a lipoaspiração da cintura e dos flancos. é indicada principalmente depois de gestações ou de grande perda de peso. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Lipoabdominoplastia: abdômen mais firme e cintura desenhada</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A lipoabdominoplastia une a retirada do excesso de pele do abdômen, a correção da diástase e a lipoaspiração da cintura e dos flancos. É indicada principalmente depois de gestações ou de grande perda de peso.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural ou raquianestesia com sedação, ou anestesia geral</dd></div>
+        <div><dt>Duração</dt><dd>3 a 5 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Uma noite, em geral</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a combinação da abdominoplastia (retirada de pele e gordura da parte de baixo do abdômen) com a lipoaspiração das áreas ao redor. Quando os músculos retos do abdômen estão afastados, a chamada diástase, eles são aproximados com pontos internos. O umbigo é reposicionado.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Excesso de pele e estrias abaixo do umbigo, que são retiradas junto da pele</li><li>Abdômen projetado por diástase</li><li>Contorno da cintura e dos flancos</li><li>Caimento de roupas e conforto com o próprio corpo</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Mulheres que já tiveram filhos e não planejam novas gestações</li><li>Pessoas que perderam muito peso e ficaram com sobra de pele</li><li>Peso estável há alguns meses</li><li>Não fumantes, ou que parem de fumar com antecedência</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Não é tratamento para obesidade. Quem ainda planeja engravidar costuma ser orientado a esperar, porque uma nova gestação pode alterar o resultado.</p>
+      <h3>Como é feita</h3>
+      <p>A incisão é feita na parte baixa do abdômen, na altura da calcinha. A pele e a gordura em excesso são retiradas, a musculatura é aproximada quando há diástase, o umbigo é reposicionado e a cintura é tratada com lipo.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeiros dias</strong><span>Caminhar levemente curvado para proteger a cicatriz; cinta e drenos, quando usados, são acompanhados pela equipe.</span></li><li><strong>2 a 3 semanas</strong><span>Retorno a atividades leves e ao trabalho sem esforço.</span></li><li><strong>6 a 8 semanas</strong><span>Liberação gradual para exercícios, com cuidado especial com o abdômen.</span></li><li><strong>6 a 12 meses</strong><span>A cicatriz amadurece e clareia aos poucos.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Horizontal e baixa, planejada para ficar escondida pela roupa íntima, além de uma pequena cicatriz ao redor do umbigo.</p>
+      <h3>Riscos</h3>
+      <p>Seroma, alterações na cicatrização, perda de sensibilidade temporária na pele abaixo do umbigo, infecção e trombose. Prevenção de trombose, caminhadas precoces e não fumar são parte do protocolo.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>A cicatriz fica grande?</dt><dd>Ela é longa, mas baixa. O planejamento busca deixá-la dentro da área coberta por biquíni ou roupa íntima.</dd></div><div><dt>Posso engravidar depois?</dt><dd>Pode, mas a gestação pode afrouxar novamente a pele e a musculatura. Por isso o ideal é operar depois de concluir os planos de filhos.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lipoabdominoplastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="miniabdominoplastia" data-cat="Corpo e contorno" data-busca="miniabdominoplastia: quando a sobra de pele é pequena a miniabdominoplastia trata o excesso de pele e gordura abaixo do umbigo, com cicatriz menor e recuperação mais rápida que a abdominoplastia completa. serve para casos selecionados. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Miniabdominoplastia: quando a sobra de pele é pequena</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A miniabdominoplastia trata o excesso de pele e gordura abaixo do umbigo, com cicatriz menor e recuperação mais rápida que a abdominoplastia completa. Serve para casos selecionados.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural ou raquianestesia com sedação</dd></div>
+        <div><dt>Duração</dt><dd>1h30 a 3 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É uma versão reduzida da abdominoplastia. A incisão é mais curta, a retirada de pele se limita à parte de baixo do abdômen e, em geral, o umbigo não precisa ser reposicionado. Pode ser associada à lipo da cintura.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Pequena sobra de pele abaixo do umbigo</li><li>Abaulamento na parte baixa do abdômen</li><li>Contorno quando combinada com lipo</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Flacidez concentrada abaixo do umbigo</li><li>Pele de boa qualidade acima do umbigo</li><li>Diástase pequena ou restrita à parte de baixo, quando houver</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quando a flacidez ou a diástase se estendem acima do umbigo, a miniabdominoplastia não resolve, e a abdominoplastia completa é a indicação.</p>
+      <h3>Como é feita</h3>
+      <p>Incisão baixa e mais curta, retirada da pele em excesso e, se necessário, reforço da musculatura abaixo do umbigo.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Repouso relativo, cinta e caminhadas leves.</span></li><li><strong>2 semanas</strong><span>Retorno ao trabalho leve, em geral.</span></li><li><strong>4 a 6 semanas</strong><span>Volta gradual aos exercícios.</span></li><li><strong>6 a 12 meses</strong><span>Amadurecimento da cicatriz.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Horizontal, baixa e mais curta que a da abdominoplastia completa.</p>
+      <h3>Riscos</h3>
+      <p>Semelhantes aos da abdominoplastia, em geral com menor intensidade: seroma, alterações de cicatriz e de sensibilidade.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Como sei se é mini ou completa?</dt><dd>Depende de onde está a sobra de pele e da diástase. Só o exame físico na consulta define.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Miniabdominoplastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="harmonizacao-glutea" data-cat="Corpo e contorno" data-busca="harmonização glútea: contorno e proporção a harmonização glútea melhora o formato e a proporção da região dos glúteos em relação à cintura e às coxas. o plano pode combinar lipoescultura, enxerto da própria gordura e outras técnicas, conforme o caso. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Harmonização glútea: contorno e proporção</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A harmonização glútea melhora o formato e a proporção da região dos glúteos em relação à cintura e às coxas. O plano pode combinar lipoescultura, enxerto da própria gordura e outras técnicas, conforme o caso.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural ou raquianestesia com sedação, ou anestesia geral</dd></div>
+        <div><dt>Duração</dt><dd>3 a 4 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Uma noite, em geral</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É um conjunto de técnicas para redesenhar a região glútea. Em muitos casos, a lipo afina a cintura, os flancos e a região lombar, o que por si só valoriza o glúteo; a gordura retirada pode ser purificada e enxertada para dar volume e projeção, de forma criteriosa.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Projeção e formato dos glúteos</li><li>Transição entre cintura, quadril e coxas</li><li>Pequenas depressões laterais do quadril</li><li>Proporção do corpo visto de lado e de costas</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Quem deseja mais contorno e proporção na região</li><li>Pessoas com gordura disponível para enxerto, quando ele for planejado</li><li>Boa saúde e expectativas realistas</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Não é indicada a aplicação de substâncias não autorizadas, como o PMMA para aumento de volume. O enxerto de gordura deve seguir técnica segura, com o cirurgião respeitando planos anatômicos específicos.</p>
+      <h3>Como é feita</h3>
+      <p>A lipoescultura é feita nas áreas doadoras, a gordura é preparada e enxertada no tecido subcutâneo dos glúteos com cânulas, em várias camadas e direções. A posição da cânula é controlada para reduzir riscos.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>2 a 3 semanas</strong><span>Evitar sentar e deitar diretamente sobre os glúteos, conforme orientação, para proteger o enxerto.</span></li><li><strong>4 a 6 semanas</strong><span>Retorno gradual às atividades e aos exercícios.</span></li><li><strong>3 a 6 meses</strong><span>Parte da gordura enxertada é absorvida naturalmente; o volume estabiliza nesse período.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Pequenas incisões da lipo, em pontos escondidos.</p>
+      <h3>Riscos</h3>
+      <p>Absorção de parte do enxerto, assimetrias, nódulos e, raramente, embolia gordurosa, complicação grave que torna a técnica correta e a experiência do cirurgião essenciais.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Toda a gordura enxertada fica?</dt><dd>Não. Parte dela é absorvida nos primeiros meses, o que é esperado e entra no planejamento.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Harmonização glútea no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="diastase-abdominal" data-cat="Corpo e contorno" data-busca="diástase abdominal: o vilão quase invisível do contorno diástase é o afastamento dos músculos retos do abdômen, comum depois da gestação. ela deixa a barriga projetada mesmo em quem está magra e não melhora com abdominais. corpo e contorno">
+      <header class="artigo__topo">
+        <span class="rotulo">Corpo e contorno</span>
+        <h2>Diástase abdominal: o vilão quase invisível do contorno</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Diástase é o afastamento dos músculos retos do abdômen, comum depois da gestação. Ela deixa a barriga projetada mesmo em quem está magra e não melhora com abdominais.</p>
+      <h3>Como saber se tenho</h3>
+      <p>Sinais comuns: barriga que parece &quot;estufada&quot; no fim do dia, um abaulamento no meio do abdômen ao fazer força para levantar da cama e dificuldade de definir a cintura mesmo com treino. O diagnóstico é feito no exame físico e, às vezes, com ultrassom.</p>
+      <h3>Tratamento</h3>
+      <p>Fisioterapia e exercícios específicos podem ajudar em diástases pequenas. Quando o afastamento é maior, a correção é cirúrgica: os músculos são aproximados com pontos internos, em geral durante a abdominoplastia ou lipoabdominoplastia.</p>
+      <h3>Quando operar</h3>
+      <p>O ideal é depois de concluir os planos de gestação e com o peso estável.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre diástase abdominal no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="mamoplastia-aumento" data-cat="Mamas" data-busca="prótese de silicone: aumento das mamas com proporção a mamoplastia de aumento usa implantes de silicone para aumentar o volume e melhorar o contorno das mamas. tamanho, formato e posição são escolhidos de acordo com o corpo, não com um número. mamas">
+      <header class="artigo__topo">
+        <span class="rotulo">Mamas</span>
+        <h2>Prótese de silicone: aumento das mamas com proporção</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A mamoplastia de aumento usa implantes de silicone para aumentar o volume e melhorar o contorno das mamas. Tamanho, formato e posição são escolhidos de acordo com o corpo, não com um número.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Geral ou peridural com sedação</dd></div>
+        <div><dt>Duração</dt><dd>1 a 2 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a colocação de próteses de silicone por uma pequena incisão, em um plano escolhido para cada paciente: atrás da glândula, atrás do músculo ou em plano duplo. A escolha da prótese considera a largura do tórax, a qualidade da pele e o resultado desejado.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Volume das mamas</li><li>Projeção e formato do colo</li><li>Pequenas assimetrias de volume</li><li>Perda de volume depois de amamentação ou emagrecimento, quando não há queda importante</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Mulheres que desejam mais volume</li><li>Mamas pequenas ou que perderam volume</li><li>Sem queda acentuada (quando há, a mastopexia entra no plano)</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quando a mama está caída, apenas a prótese pode não resolver e até acentuar a queda; nesse caso, associa-se a mastopexia.</p>
+      <h3>Como é feita</h3>
+      <p>A incisão costuma ser feita no sulco abaixo da mama, ao redor da aréola ou na axila. O espaço para a prótese é preparado no plano escolhido e o implante é posicionado com técnicas que reduzem a contaminação.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Sutiã cirúrgico, braços próximos ao corpo e repouso relativo.</span></li><li><strong>7 a 10 dias</strong><span>Retorno ao trabalho leve, em geral.</span></li><li><strong>4 a 6 semanas</strong><span>Liberação gradual para exercícios; evitar esforço com os braços no início.</span></li><li><strong>3 a 6 meses</strong><span>As próteses se acomodam e o formato final aparece.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Pequena, no sulco abaixo da mama, na borda da aréola ou na axila, conforme a via escolhida.</p>
+      <h3>Riscos</h3>
+      <p>Contratura capsular (endurecimento ao redor da prótese), assimetria, alterações de sensibilidade do mamilo, infecção, ruptura do implante e, raramente, linfoma associado a implantes, ligado principalmente a superfícies texturizadas.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Preciso trocar a prótese em 10 anos?</dt><dd>Não existe um prazo fixo. O acompanhamento é periódico, com exames de imagem, e a troca é avaliada quando há alguma alteração.</dd></div><div><dt>Posso amamentar depois?</dt><dd>Na maioria dos casos, sim. A via de acesso e o plano da prótese entram nessa conversa na consulta.</dd></div><div><dt>Como escolho o tamanho?</dt><dd>Pelas medidas do seu tórax e da sua mama e pelo resultado que você deseja. Na consulta, existem formas de simular os volumes.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Prótese de silicone no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="mastopexia-protese" data-cat="Mamas" data-busca="mastopexia com prótese: elevação e volume a mastopexia com prótese reposiciona as mamas caídas e devolve volume ao colo. é muito procurada depois de gestações, amamentação e emagrecimento. mamas">
+      <header class="artigo__topo">
+        <span class="rotulo">Mamas</span>
+        <h2>Mastopexia com prótese: elevação e volume</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A mastopexia com prótese reposiciona as mamas caídas e devolve volume ao colo. É muito procurada depois de gestações, amamentação e emagrecimento.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Geral, em geral</dd></div>
+        <div><dt>Duração</dt><dd>2 a 4 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>A mastopexia é a cirurgia que eleva a mama, retira o excesso de pele e reposiciona a aréola. Quando há perda de volume, uma prótese de silicone é colocada na mesma cirurgia para preencher o polo superior, a parte de cima da mama.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Queda das mamas (ptose)</li><li>Perda de volume no colo</li><li>Aréolas grandes ou posicionadas muito baixo</li><li>Formato e firmeza</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Mamas caídas e esvaziadas depois de gestações ou emagrecimento</li><li>Peso estável</li><li>Mulheres que não planejam amamentar em breve</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quem ainda vai engravidar pode ser orientada a esperar, pois a gestação e a amamentação alteram a mama novamente.</p>
+      <h3>Como é feita</h3>
+      <p>Pele e glândula são remodeladas para elevar a mama, a aréola é reposicionada e a prótese é colocada no plano escolhido. O desenho das incisões depende do grau de queda.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeiras 2 semanas</strong><span>Sutiã cirúrgico, repouso relativo, braços sem esforço.</span></li><li><strong>2 a 3 semanas</strong><span>Retorno ao trabalho leve.</span></li><li><strong>6 semanas</strong><span>Liberação gradual para exercícios.</span></li><li><strong>6 a 12 meses</strong><span>Mama acomodada e cicatrizes mais claras.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Ao redor da aréola e, conforme o caso, vertical abaixo dela e no sulco (formato de &quot;T invertido&quot;). Quanto maior a queda, maior a cicatriz necessária.</p>
+      <h3>Riscos</h3>
+      <p>Alterações de cicatrização, assimetria, alteração de sensibilidade da aréola, contratura capsular e riscos gerais das próteses.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Dá para fazer sem prótese?</dt><dd>Sim, quando há volume suficiente. A prótese entra quando é preciso preencher o colo.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Mastopexia com prótese no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="mamoplastia-redutora" data-cat="Mamas" data-busca="mamoplastia redutora: mais conforto no dia a dia a redução das mamas retira excesso de pele, gordura e glândula para aliviar o peso, melhorar a postura e equilibrar a proporção do corpo. mamas">
+      <header class="artigo__topo">
+        <span class="rotulo">Mamas</span>
+        <h2>Mamoplastia redutora: mais conforto no dia a dia</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A redução das mamas retira excesso de pele, gordura e glândula para aliviar o peso, melhorar a postura e equilibrar a proporção do corpo.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Geral</dd></div>
+        <div><dt>Duração</dt><dd>2 a 4 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Uma noite, em geral</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a cirurgia que diminui o volume das mamas e as reposiciona, junto com a aréola, em uma posição mais alta e proporcional. Além da estética, costuma trazer alívio físico.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Dores nas costas, no pescoço e nos ombros relacionadas ao peso das mamas</li><li>Marcas das alças do sutiã</li><li>Assaduras no sulco das mamas</li><li>Dificuldade para praticar atividades físicas e encontrar roupas</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Mamas volumosas que causam desconforto físico ou emocional</li><li>Peso estável</li><li>Boa saúde geral</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quem planeja engravidar e amamentar pode ser orientada sobre o impacto da cirurgia na amamentação, que pode ficar limitada.</p>
+      <h3>Como é feita</h3>
+      <p>O tecido em excesso é retirado, a mama é remodelada e a aréola é reposicionada. O desenho das incisões depende do volume a retirar.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeiras 2 semanas</strong><span>Sutiã cirúrgico e repouso relativo.</span></li><li><strong>2 a 3 semanas</strong><span>Retorno ao trabalho leve.</span></li><li><strong>6 semanas</strong><span>Volta gradual aos exercícios.</span></li><li><strong>6 a 12 meses</strong><span>Cicatrizes amadurecem.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Em geral, ao redor da aréola, vertical e no sulco abaixo da mama.</p>
+      <h3>Riscos</h3>
+      <p>Alterações de cicatrização, de sensibilidade e da capacidade de amamentar, assimetrias e, raramente, sofrimento de pele ou da aréola.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>O alívio nas costas é imediato?</dt><dd>Muitas pacientes relatam alívio já nas primeiras semanas, mas a experiência varia de pessoa para pessoa.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Mamoplastia redutora no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="assimetria-mamaria" data-cat="Mamas" data-busca="correção de assimetria mamária é comum uma mama ser diferente da outra. quando a diferença incomoda, a cirurgia equilibra tamanho, formato e posição, com técnicas escolhidas para cada lado. mamas">
+      <header class="artigo__topo">
+        <span class="rotulo">Mamas</span>
+        <h2>Correção de assimetria mamária</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> É comum uma mama ser diferente da outra. Quando a diferença incomoda, a cirurgia equilibra tamanho, formato e posição, com técnicas escolhidas para cada lado.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Geral, em geral</dd></div>
+        <div><dt>Duração</dt><dd>Varia conforme as técnicas combinadas</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia ou após uma noite</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>A correção de assimetria combina, conforme o caso, prótese, redução, elevação ou ajustes da aréola. Cada mama pode receber uma técnica diferente para chegar a um resultado mais simétrico.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Diferença de volume entre as mamas</li><li>Diferença de altura e de formato</li><li>Aréolas de tamanhos ou posições diferentes</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Assimetria que incomoda ou dificulta o uso de roupas</li><li>Assimetrias de desenvolvimento, após gestação ou após outras cirurgias</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Simetria perfeita não existe no corpo humano; o objetivo é reduzir a diferença de forma natural.</p>
+      <h3>Como é feita</h3>
+      <p>O plano é definido na consulta, com medidas de cada lado. Pode envolver próteses de tamanhos diferentes, redução de um lado, mastopexia ou combinação dessas técnicas.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Semelhante às cirurgias de mama</strong><span>Sutiã cirúrgico, repouso relativo e retorno gradual em 2 a 6 semanas, conforme as técnicas usadas.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Depende das técnicas usadas em cada mama.</p>
+      <h3>Riscos</h3>
+      <p>Os mesmos de cada técnica envolvida, além da possibilidade de alguma diferença residual entre os lados.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Uso próteses de tamanhos diferentes?</dt><dd>Às vezes, sim. A escolha é feita para equilibrar o resultado final.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Correção de assimetria mamária no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="lifting-facial" data-cat="Face" data-busca="lifting facial: rejuvenescimento com expressão natural o lifting reposiciona os tecidos do rosto e do pescoço que caíram com o tempo. a proposta é um rosto descansado, que continue parecendo com você. face">
+      <header class="artigo__topo">
+        <span class="rotulo">Face</span>
+        <h2>Lifting facial: rejuvenescimento com expressão natural</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> O lifting reposiciona os tecidos do rosto e do pescoço que caíram com o tempo. A proposta é um rosto descansado, que continue parecendo com você.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Geral ou local com sedação</dd></div>
+        <div><dt>Duração</dt><dd>3 a 5 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Uma noite, em geral</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a cirurgia que trata a flacidez do terço médio e inferior da face e do pescoço. Além da pele, o cirurgião reposiciona as camadas mais profundas de sustentação, o que dá um resultado mais natural e duradouro do que apenas esticar a pele.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Flacidez das bochechas e do contorno da mandíbula (&quot;buldogue&quot;)</li><li>Sulcos profundos ao redor da boca</li><li>Flacidez e bandas do pescoço</li><li>Perda de definição do ângulo entre queixo e pescoço</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Flacidez que não responde a tratamentos não cirúrgicos</li><li>Boa saúde geral</li><li>Não fumantes, ou que parem com antecedência</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Linhas finas e manchas da pele não são tratadas pelo lifting; podem ser associados tratamentos de pele.</p>
+      <h3>Como é feita</h3>
+      <p>As incisões contornam a orelha e seguem para o couro cabeludo. As camadas profundas são reposicionadas, o excesso de pele é retirado sem tensão e, quando indicado, o pescoço é tratado por uma pequena incisão sob o queixo.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeiras 2 semanas</strong><span>Inchaço e manchas roxas; cabeceira elevada e faixa conforme orientação.</span></li><li><strong>2 a 3 semanas</strong><span>Retorno a atividades sociais, em geral.</span></li><li><strong>4 a 6 semanas</strong><span>Liberação para exercícios.</span></li><li><strong>3 a 6 meses</strong><span>Acomodação final dos tecidos.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Ao redor da orelha e no couro cabeludo, planejadas para ficarem discretas.</p>
+      <h3>Riscos</h3>
+      <p>Hematoma, alterações de sensibilidade, problemas de cicatrização e, raramente, lesão de ramos do nervo facial, que costuma ser temporária.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Quanto tempo dura?</dt><dd>Os efeitos costumam durar muitos anos, mas o envelhecimento natural continua.</dd></div><div><dt>Vou ficar com cara de esticada?</dt><dd>O objetivo é o oposto: reposicionar as camadas profundas para um resultado natural.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lifting facial no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="lipo-papada" data-cat="Face" data-busca="lipo de papada: contorno do pescoço a lipo de papada remove a gordura localizada abaixo do queixo e define o ângulo entre o rosto e o pescoço, com incisão mínima e recuperação rápida. face">
+      <header class="artigo__topo">
+        <span class="rotulo">Face</span>
+        <h2>Lipo de papada: contorno do pescoço</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A lipo de papada remove a gordura localizada abaixo do queixo e define o ângulo entre o rosto e o pescoço, com incisão mínima e recuperação rápida.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Local com sedação, em geral</dd></div>
+        <div><dt>Duração</dt><dd>Cerca de 1 hora</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a lipoaspiração da região submentoniana, feita com cânulas finas. Pode ser associada a tecnologias de retração de pele quando há flacidez leve.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Gordura acumulada abaixo do queixo</li><li>Definição do contorno da mandíbula</li><li>Perfil do rosto e do pescoço</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Gordura localizada na papada</li><li>Pele com boa elasticidade</li><li>Pessoas jovens ou com pouca flacidez</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Quando a papada é causada principalmente por flacidez de pele ou por bandas musculares, o lifting de pescoço costuma ser mais indicado.</p>
+      <h3>Como é feita</h3>
+      <p>Uma pequena incisão é feita abaixo do queixo e, às vezes, atrás das orelhas. A gordura é aspirada com cânulas finas e uma faixa compressiva é usada depois.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Faixa compressiva e inchaço leve a moderado.</span></li><li><strong>5 a 7 dias</strong><span>Retorno ao trabalho, em geral.</span></li><li><strong>2 a 3 meses</strong><span>Contorno final.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Muito pequena, escondida abaixo do queixo.</p>
+      <h3>Riscos</h3>
+      <p>Irregularidades, inchaço prolongado, alteração de sensibilidade temporária e, raramente, lesão de nervo.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Precisa de faixa?</dt><dd>Sim, a compressão ajuda a pele a se acomodar ao novo contorno.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Lipo de papada no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="blefaroplastia" data-cat="Face" data-busca="blefaroplastia: olhar mais descansado a blefaroplastia trata o excesso de pele e as bolsas das pálpebras superiores e inferiores. o resultado é um olhar mais descansado, sem mudar a sua expressão. face">
+      <header class="artigo__topo">
+        <span class="rotulo">Face</span>
+        <h2>Blefaroplastia: olhar mais descansado</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A blefaroplastia trata o excesso de pele e as bolsas das pálpebras superiores e inferiores. O resultado é um olhar mais descansado, sem mudar a sua expressão.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Local com sedação, em geral</dd></div>
+        <div><dt>Duração</dt><dd>1 a 2 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a cirurgia das pálpebras. Na superior, retira o excesso de pele que pesa sobre os olhos. Na inferior, trata as bolsas de gordura e, quando necessário, o excesso de pele.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Pele em excesso nas pálpebras superiores, que pode até atrapalhar a visão lateral</li><li>Bolsas abaixo dos olhos</li><li>Aspecto de cansaço</li><li>Em alguns casos, a transição entre pálpebra e bochecha</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Homens e mulheres com excesso de pele ou bolsas nas pálpebras</li><li>Boa saúde ocular (uma avaliação oftalmológica pode ser pedida)</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Olheiras de pigmento e rugas finas não são corrigidas pela cirurgia e podem precisar de outros tratamentos.</p>
+      <h3>Como é feita</h3>
+      <p>Na pálpebra superior, a incisão fica no sulco natural. Na inferior, pode ser feita logo abaixo dos cílios ou por dentro da pálpebra, sem cicatriz visível, conforme o caso.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Compressas frias, inchaço e roxos; pontos retirados entre 5 e 7 dias.</span></li><li><strong>7 a 14 dias</strong><span>Retorno às atividades sociais; óculos escuros ajudam.</span></li><li><strong>2 semanas</strong><span>Lentes de contato e maquiagem, quando liberadas.</span></li><li><strong>2 a 3 meses</strong><span>Resultado final.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>No sulco da pálpebra superior e, na inferior, logo abaixo dos cílios ou por dentro da pálpebra; tende a ficar muito discreta.</p>
+      <h3>Riscos</h3>
+      <p>Olho seco temporário, assimetrias, dificuldade temporária para fechar os olhos e, raramente, alterações na posição da pálpebra inferior.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Homem pode fazer?</dt><dd>Sim. A técnica é adaptada para preservar as características do olhar masculino.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Blefaroplastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="otoplastia" data-cat="Face" data-busca="otoplastia: correção das orelhas de abano a otoplastia aproxima as orelhas da cabeça e corrige dobras da cartilagem. pode ser feita a partir dos 5 ou 6 anos de idade e também em adultos. face">
+      <header class="artigo__topo">
+        <span class="rotulo">Face</span>
+        <h2>Otoplastia: correção das orelhas de abano</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A otoplastia aproxima as orelhas da cabeça e corrige dobras da cartilagem. Pode ser feita a partir dos 5 ou 6 anos de idade e também em adultos.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Local com sedação em adultos; geral em crianças</dd></div>
+        <div><dt>Duração</dt><dd>1 a 2 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a cirurgia que remodela a cartilagem da orelha para corrigir a proeminência, as chamadas orelhas de abano, e outras alterações de formato.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Orelhas afastadas da cabeça</li><li>Falta da dobra natural da cartilagem</li><li>Assimetria entre as orelhas</li><li>Autoestima, especialmente em crianças em idade escolar</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Crianças a partir de 5 ou 6 anos, quando a orelha já está quase do tamanho adulto</li><li>Adolescentes e adultos</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> A cirurgia não altera a audição.</p>
+      <h3>Como é feita</h3>
+      <p>A incisão é feita atrás da orelha. A cartilagem é remodelada com pontos internos e, quando necessário, parte dela é ajustada.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Curativo ou faixa contínua.</span></li><li><strong>Semanas seguintes</strong><span>Faixa à noite por algumas semanas, conforme orientação.</span></li><li><strong>1 a 2 semanas</strong><span>Retorno à escola ou ao trabalho.</span></li><li><strong>6 semanas</strong><span>Liberação para esportes de contato.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Atrás da orelha, escondida.</p>
+      <h3>Riscos</h3>
+      <p>Hematoma, assimetria, retorno parcial da proeminência e alterações de cicatriz.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Qual a idade ideal?</dt><dd>A partir dos 5 ou 6 anos já é possível, antes de a criança sofrer com comentários na escola.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Otoplastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="ginecomastia" data-cat="Masculino" data-busca="ginecomastia: tórax masculino mais plano ginecomastia é o aumento das mamas no homem, por glândula, gordura ou ambos. a cirurgia remove esse excesso e devolve o contorno masculino do peitoral. masculino">
+      <header class="artigo__topo">
+        <span class="rotulo">Masculino</span>
+        <h2>Ginecomastia: tórax masculino mais plano</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Ginecomastia é o aumento das mamas no homem, por glândula, gordura ou ambos. A cirurgia remove esse excesso e devolve o contorno masculino do peitoral.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Peridural, geral ou local com sedação, conforme o caso</dd></div>
+        <div><dt>Duração</dt><dd>1 a 2 horas, em média</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>A ginecomastia é comum e pode surgir na adolescência, com variações hormonais, uso de algumas medicações ou de anabolizantes, ou com ganho de peso. A cirurgia retira o tecido glandular e a gordura em excesso.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Volume das mamas no homem</li><li>Abaulamento atrás da aréola</li><li>Constrangimento ao usar camisetas ou sem camisa</li><li>Contorno do peitoral</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Homens com ginecomastia persistente</li><li>Causas investigadas antes da cirurgia</li><li>Peso estável</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Se a causa for uma medicação, um hormônio ou o uso de anabolizantes, a orientação inclui tratar ou suspender a causa, sob acompanhamento.</p>
+      <h3>Como é feita</h3>
+      <p>A gordura é retirada com lipoaspiração e a glândula é removida por uma pequena incisão na borda inferior da aréola. Em casos com sobra de pele, outras técnicas podem ser necessárias.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Colete compressivo e repouso relativo.</span></li><li><strong>7 a 10 dias</strong><span>Retorno ao trabalho leve.</span></li><li><strong>4 a 6 semanas</strong><span>Volta gradual aos treinos, inclusive de peitoral.</span></li><li><strong>3 a 6 meses</strong><span>Contorno final.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Pequena, na borda inferior da aréola, onde a mudança de cor ajuda a disfarçar.</p>
+      <h3>Riscos</h3>
+      <p>Hematoma, seroma, irregularidades, assimetria e alteração de sensibilidade da aréola.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>Pode voltar?</dt><dd>Se a causa continuar presente, como o uso de anabolizantes, a ginecomastia pode voltar.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Ginecomastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="ninfoplastia" data-cat="Íntima" data-busca="ninfoplastia: conforto e autoestima íntima a ninfoplastia reduz e harmoniza os pequenos lábios vaginais. muitas mulheres procuram a cirurgia por desconforto ao vestir, praticar esportes ou nas relações. íntima">
+      <header class="artigo__topo">
+        <span class="rotulo">Íntima</span>
+        <h2>Ninfoplastia: conforto e autoestima íntima</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> A ninfoplastia reduz e harmoniza os pequenos lábios vaginais. Muitas mulheres procuram a cirurgia por desconforto ao vestir, praticar esportes ou nas relações.</p>
+      
+      <dl class="ficha">
+        <div><dt>Anestesia</dt><dd>Local com sedação, em geral</dd></div>
+        <div><dt>Duração</dt><dd>Cerca de 1 hora</dd></div>
+        <div><dt>Internação</dt><dd>Alta no mesmo dia</dd></div>
+      </dl>
+      <h3>O que é</h3>
+      <p>É a cirurgia que diminui o tamanho dos pequenos lábios ou corrige assimetrias entre eles. É um procedimento delicado, feito com atenção à sensibilidade e à aparência natural da região.</p>
+      <h3>O que melhora</h3>
+      <ul class="lista-check"><li>Incômodo com roupas justas, biquíni e roupas de ginástica</li><li>Dor ou atrito ao andar de bicicleta ou praticar esportes</li><li>Desconforto nas relações</li><li>Assimetria entre os lábios e autoestima</li></ul>
+      <h3>Para quem é indicado</h3>
+      <ul class=""><li>Mulheres adultas com desconforto físico ou emocional</li><li>Boa saúde geral</li></ul>
+      <p class="nota-art"><strong>Quando não é indicado:</strong> Não altera a sensibilidade de forma planejada nem trata questões funcionais internas, que podem exigir avaliação ginecológica.</p>
+      <h3>Como é feita</h3>
+      <p>O excesso de tecido é retirado com técnica que preserva a borda natural e o contorno. Os pontos são absorvíveis, em geral.</p>
+      <h3>Recuperação, em média</h3>
+      <ol class="linha-tempo"><li><strong>Primeira semana</strong><span>Inchaço, compressas frias e cuidados de higiene orientados pela equipe.</span></li><li><strong>1 semana</strong><span>Retorno ao trabalho, em geral.</span></li><li><strong>30 a 45 dias</strong><span>Liberação para relações sexuais e exercícios.</span></li><li><strong>2 a 3 meses</strong><span>Resultado final.</span></li></ol>
+      <h3>Cicatriz</h3>
+      <p>Na borda dos pequenos lábios, que costuma cicatrizar bem e ficar pouco visível.</p>
+      <h3>Riscos</h3>
+      <p>Inchaço prolongado, deiscência (abertura de pontos), assimetria e alteração de sensibilidade.</p>
+      <h3>Dúvidas comuns</h3>
+      <dl class="duvidas"><div><dt>É muito dolorido?</dt><dd>O desconforto costuma ser leve a moderado e controlado com medicação.</dd></div></dl>
+      <aside class="cta-art">
+        <p>Quer saber se este procedimento é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre Ninfoplastia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="preparo-cirurgia" data-cat="Preparo e recuperação" data-busca="como se preparar nos 30 dias antes da cirurgia uma boa preparação reduz riscos e deixa a recuperação mais tranquila. estes são os cuidados mais comuns; as orientações finais são sempre as da sua equipe. preparo e recuperação">
+      <header class="artigo__topo">
+        <span class="rotulo">Preparo e recuperação</span>
+        <h2>Como se preparar nos 30 dias antes da cirurgia</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Uma boa preparação reduz riscos e deixa a recuperação mais tranquila. Estes são os cuidados mais comuns; as orientações finais são sempre as da sua equipe.</p>
+      <h3>Saúde e exames</h3>
+      <ul class=""><li>Faça todos os exames pedidos e leve os resultados na consulta pré-operatória</li><li>Informe todos os remédios, vitaminas, chás e suplementos que você usa; alguns precisam ser suspensos</li><li>Conte sobre cirurgias anteriores, alergias e problemas de coagulação ou trombose na família</li></ul>
+      <h3>Cigarro e hábitos</h3>
+      <ul class=""><li>Pare de fumar (inclusive cigarro eletrônico) pelo menos 4 semanas antes e só volte quando liberado: o cigarro prejudica a cicatrização</li><li>Evite bebida alcoólica nos dias anteriores</li><li>Mantenha o peso estável e boa alimentação</li></ul>
+      <h3>Organização da recuperação</h3>
+      <ul class=""><li>Combine com alguém para ficar com você nos primeiros dias</li><li>Deixe roupas largas, de abrir na frente, separadas</li><li>Compre a cinta, malha ou sutiã indicados com antecedência</li><li>Organize afastamento do trabalho e quem vai cuidar dos filhos, se houver</li></ul>
+      <h3>Na véspera</h3>
+      <ul class=""><li>Siga o jejum orientado</li><li>Tome banho conforme a orientação da equipe e não use cremes na pele</li><li>Retire joias, unhas postiças e esmalte, se solicitado</li></ul>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre como se preparar nos 30 dias antes da cirurgia no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="pos-operatorio" data-cat="Preparo e recuperação" data-busca="pós-operatório: o que esperar e quando avisar a equipe inchaço, manchas roxas e cansaço nos primeiros dias são esperados. saber o que é normal e o que é sinal de alerta deixa a recuperação mais segura. preparo e recuperação">
+      <header class="artigo__topo">
+        <span class="rotulo">Preparo e recuperação</span>
+        <h2>Pós-operatório: o que esperar e quando avisar a equipe</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Inchaço, manchas roxas e cansaço nos primeiros dias são esperados. Saber o que é normal e o que é sinal de alerta deixa a recuperação mais segura.</p>
+      <h3>O que é esperado</h3>
+      <ul class=""><li>Inchaço, que diminui aos poucos ao longo de semanas</li><li>Manchas roxas, que somem em 2 a 3 semanas</li><li>Desconforto controlado com os remédios prescritos</li><li>Sensibilidade alterada na região operada, que costuma voltar com o tempo</li></ul>
+      <h3>Cuidados que ajudam</h3>
+      <ul class=""><li>Caminhar dentro de casa desde o primeiro dia, para ajudar a circulação e prevenir trombose</li><li>Usar cinta, malha ou sutiã pelo tempo indicado</li><li>Fazer drenagem linfática quando e se indicada pela equipe</li><li>Beber água, comer bem e dormir na posição orientada</li><li>Comparecer a todos os retornos</li></ul>
+      <h3>Sinais de alerta: fale com a equipe</h3>
+      <ul class=""><li>Febre persistente</li><li>Dor que piora em vez de melhorar</li><li>Falta de ar ou dor no peito (procure atendimento de urgência)</li><li>Dor, inchaço ou vermelhidão na panturrilha</li><li>Sangramento, secreção com mau cheiro ou área muito vermelha e quente</li><li>Inchaço grande e endurecido de um lado só</li></ul>
+      <p>Durante a recuperação, os pacientes do Dr. Iuri têm um canal direto com a equipe para dúvidas e intercorrências.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre pós-operatório no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="cicatrizes" data-cat="Preparo e recuperação" data-busca="cicatriz de cirurgia plástica: como cuidar toda cirurgia deixa cicatriz. o cirurgião planeja onde ela fica; o cuidado depois ajuda a deixá-la mais discreta. a cicatriz amadurece por 12 a 18 meses. preparo e recuperação">
+      <header class="artigo__topo">
+        <span class="rotulo">Preparo e recuperação</span>
+        <h2>Cicatriz de cirurgia plástica: como cuidar</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Toda cirurgia deixa cicatriz. O cirurgião planeja onde ela fica; o cuidado depois ajuda a deixá-la mais discreta. A cicatriz amadurece por 12 a 18 meses.</p>
+      <h3>Como a cicatriz evolui</h3>
+      <p>Nos primeiros meses, é normal a cicatriz ficar mais avermelhada ou escura e um pouco endurecida. Com o tempo, ela clareia, amacia e fica mais plana. Esse processo leva de 12 a 18 meses.</p>
+      <h3>Cuidados que fazem diferença</h3>
+      <ul class=""><li>Proteger do sol: roupa por cima e protetor solar quando liberado</li><li>Usar fitas ou gel de silicone, se indicados</li><li>Evitar tensão na cicatriz nas primeiras semanas</li><li>Não fumar</li><li>Comparecer aos retornos para acompanhar a evolução</li></ul>
+      <h3>Quando procurar avaliação</h3>
+      <p>Se a cicatriz ficar muito elevada, coçar muito ou crescer além do corte, pode ser uma cicatriz hipertrófica ou queloide, que têm tratamento. Fale com a equipe.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre cicatriz de cirurgia plástica no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="cirurgias-combinadas" data-cat="Preparo e recuperação" data-busca="posso fazer mais de um procedimento na mesma cirurgia? em muitos casos, sim, como mamas e abdômen juntos depois da gestação. a decisão depende da sua saúde, do tempo total de cirurgia e da segurança da recuperação. preparo e recuperação">
+      <header class="artigo__topo">
+        <span class="rotulo">Preparo e recuperação</span>
+        <h2>Posso fazer mais de um procedimento na mesma cirurgia?</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Em muitos casos, sim, como mamas e abdômen juntos depois da gestação. A decisão depende da sua saúde, do tempo total de cirurgia e da segurança da recuperação.</p>
+      <h3>Vantagens</h3>
+      <ul class=""><li>Uma única anestesia e um único período de recuperação</li><li>Resultado mais harmônico entre as regiões tratadas</li></ul>
+      <h3>Limites</h3>
+      <ul class=""><li>O tempo de cirurgia e o volume de lipo têm limites de segurança</li><li>A recuperação pode ser mais intensa</li><li>Nem todo paciente é candidato a combinar procedimentos</li></ul>
+      <h3>A combinação mais procurada</h3>
+      <p>Depois das gestações, é comum combinar mastopexia com prótese e lipoabdominoplastia, conhecida como &quot;mommy makeover&quot;. O ideal é esperar o fim da amamentação e a estabilização do peso, em geral alguns meses depois.</p>
+      <p>Na consulta, o Dr. Iuri avalia se é mais seguro fazer tudo de uma vez ou dividir em etapas.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre posso fazer mais de um procedimento na mesma cirurgia? no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="como-escolher-cirurgiao" data-cat="Segurança" data-busca="como escolher um cirurgião plástico com segurança antes de olhar fotos e preços, confira três coisas: o registro no crm, o rqe em cirurgia plástica e onde a cirurgia vai ser feita. isso leva cinco minutos e faz muita diferença. segurança">
+      <header class="artigo__topo">
+        <span class="rotulo">Segurança</span>
+        <h2>Como escolher um cirurgião plástico com segurança</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Antes de olhar fotos e preços, confira três coisas: o registro no CRM, o RQE em Cirurgia Plástica e onde a cirurgia vai ser feita. Isso leva cinco minutos e faz muita diferença.</p>
+      <h3>1. Confira o CRM e o RQE</h3>
+      <p>Todo médico tem um número de CRM, mas só quem concluiu a formação em Cirurgia Plástica tem o RQE (Registro de Qualificação de Especialista) nessa área. Os dois aparecem na busca de médicos do portal do Conselho Federal de Medicina. O Dr. Iuri Zolini, por exemplo, tem CRM-MG 56449 e RQE 43193.</p>
+      <h3>2. Veja se é membro da SBCP</h3>
+      <p>A Sociedade Brasileira de Cirurgia Plástica reúne cirurgiões com formação reconhecida. O site da SBCP permite consultar os membros.</p>
+      <h3>3. Pergunte onde a cirurgia vai ser feita</h3>
+      <p>Cirurgia plástica deve acontecer em hospital ou clínica com centro cirúrgico, anestesista, UTI ou retaguarda hospitalar e equipe treinada. O Dr. Iuri opera no Hospital e Maternidade São José, em Conselheiro Lafaiete, que conta com centro de tratamento intensivo, banco de sangue e exames de imagem.</p>
+      <h3>4. Desconfie de promessas</h3>
+      <ul class=""><li>Resultado garantido ou &quot;sem cicatriz&quot;</li><li>Preço muito abaixo da média, com pressa para fechar</li><li>Consulta rápida, sem exame físico ou sem explicação de riscos</li><li>Procedimentos em locais sem estrutura hospitalar</li></ul>
+      <h3>5. Saia da consulta com as dúvidas respondidas</h3>
+      <p>Uma boa consulta explica indicações, limites, riscos, recuperação e custos. Se algo não ficou claro, pergunte de novo. Um bom cirurgião também sabe dizer quando a cirurgia não é indicada.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre como escolher um cirurgião plástico com segurança no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="tecnologias" data-cat="Tecnologia" data-busca="vibrofit e argoplasma: as tecnologias usadas no contorno corporal tecnologia não substitui técnica, mas pode ajudar. entenda para que servem as duas ferramentas que o dr. iuri usa nas cirurgias de contorno, quando indicadas. tecnologia">
+      <header class="artigo__topo">
+        <span class="rotulo">Tecnologia</span>
+        <h2>Vibrofit e Argoplasma: as tecnologias usadas no contorno corporal</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Tecnologia não substitui técnica, mas pode ajudar. Entenda para que servem as duas ferramentas que o Dr. Iuri usa nas cirurgias de contorno, quando indicadas.</p>
+      <h3>Vibrofit</h3>
+      <p>É um sistema de lipoaspiração assistida: a cânula tem um movimento de vibração que facilita a passagem pela gordura. Isso dá mais precisão ao cirurgião, especialmente em áreas fibrosas, como costas e flancos, e em lipo HD.</p>
+      <h3>Argoplasma</h3>
+      <p>Usa energia de plasma, gerada a partir do gás argônio, aplicada por baixo da pele pelas mesmas incisões da lipo. O calor controlado estimula a contração do tecido e ajuda na retração da pele em casos de flacidez leve a moderada.</p>
+      <h3>O que esperar</h3>
+      <ul class=""><li>São recursos complementares, usados conforme a indicação de cada caso</li><li>Não substituem a retirada de pele quando há sobra importante</li><li>A melhora da firmeza continua aparecendo ao longo de meses</li></ul>
+      <p>As cirurgias com essas tecnologias são feitas no Hospital e Maternidade São José, em Conselheiro Lafaiete.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre vibrofit e argoplasma no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    <article class="artigo" id="mitos-verdades" data-cat="Mitos e verdades" data-busca="mitos e verdades sobre cirurgia plástica algumas ideias sobre cirurgia plástica circulam há anos e não correspondem à realidade. veja as dúvidas mais comuns respondidas de forma direta. mitos e verdades">
+      <header class="artigo__topo">
+        <span class="rotulo">Mitos e verdades</span>
+        <h2>Mitos e verdades sobre cirurgia plástica</h2>
+        <p class="artigo__meta">Por Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193 · Revisado em outubro de 2026 · 2 min de leitura</p>
+      </header>
+      <p class="resumo"><strong>Resumo.</strong> Algumas ideias sobre cirurgia plástica circulam há anos e não correspondem à realidade. Veja as dúvidas mais comuns respondidas de forma direta.</p>
+      <h3>&quot;Lipo emagrece.&quot; Mito</h3>
+      <p>A lipo melhora o contorno e as medidas, mas a perda na balança é pequena. Ela não trata obesidade.</p>
+      <h3>&quot;Prótese de silicone precisa ser trocada a cada 10 anos.&quot; Mito</h3>
+      <p>Não existe prazo fixo. O acompanhamento é periódico, com exames de imagem, e a troca é avaliada quando há alguma alteração.</p>
+      <h3>&quot;Quem tem prótese não pode amamentar.&quot; Mito, na maioria dos casos</h3>
+      <p>Grande parte das mulheres com prótese amamenta normalmente. A via de acesso e o plano da prótese entram nessa conversa na consulta.</p>
+      <h3>&quot;Abdominal resolve diástase.&quot; Depende</h3>
+      <p>Exercícios específicos ajudam em diástases pequenas. Afastamentos maiores precisam de correção cirúrgica.</p>
+      <h3>&quot;Cirurgia plástica não deixa cicatriz.&quot; Mito</h3>
+      <p>Toda cirurgia deixa cicatriz. O cirurgião planeja onde ela fica para que seja o mais discreta possível.</p>
+      <h3>&quot;Fumar atrapalha a cirurgia.&quot; Verdade</h3>
+      <p>O cigarro reduz a circulação na pele e aumenta o risco de problemas de cicatrização. A orientação é parar semanas antes e depois.</p>
+      <h3>&quot;A drenagem linfática é obrigatória.&quot; Depende</h3>
+      <p>Ela pode ajudar a reduzir o inchaço em algumas cirurgias, mas deve começar quando e se o cirurgião indicar.</p>
+      <aside class="cta-art">
+        <p>Quer saber se uma cirurgia é indicado para você? Converse com a equipe do Dr. Iuri.</p>
+        <a class="btn btn--whats" data-wa="Olá! Li o artigo sobre mitos e verdades sobre cirurgia plástica no site e gostaria de agendar uma avaliação." href="https://wa.me/5531998900878" target="_blank" rel="noopener"><svg><use href="#i-msg"/></svg>Agendar avaliação</a>
+      </aside>
+      <p class="aviso-art">Conteúdo informativo, que não substitui uma consulta. Indicações, prazos, riscos e resultados variam de pessoa para pessoa.</p>
+      <a class="voltar" href="#indice">Voltar ao índice</a>
+    </article>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape__grade">
+      <div>
+        <span class="marca"><strong>Dr. Iuri Zolini</strong><small>Cirurgião Plástico</small></span>
+        <p style="margin-top:14px">CRM-MG 56449 · RQE 43193<br>Membro da Sociedade Brasileira de Cirurgia Plástica</p>
+      </div>
+      <div>
+        <h4>Consultório</h4>
+        <p>R. Afonso Pena, 210, sala 302, Centro<br>Conselheiro Lafaiete – MG, 36400-062<br>Segunda a sexta, das 8h às 18h</p>
+      </div>
+      <div>
+        <h4>Canais</h4>
+        <ul>
+          <li><a data-wa="Olá! Gostaria de verificar os horários disponíveis para consulta." href="https://wa.me/5531998900878" target="_blank" rel="noopener">WhatsApp (31) 99890-0878</a></li>
+          <li><a href="https://www.instagram.com/driurizolini/" target="_blank" rel="noopener">Instagram @driurizolini</a></li>
+          <li><a href="https://www.facebook.com/Dr.IuriZolini" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.doctoralia.com.br/perfil/iuri-zolini" target="_blank" rel="noopener">Doctoralia</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rodape__legal">
+      <p>Conteúdo informativo, que não substitui uma consulta médica. Indicações, riscos e resultados variam de pessoa para pessoa.</p>
+      <p>Responsável técnico: Dr. Iuri Zolini · CRM-MG 56449 · RQE 43193</p>
+      <p>Fotos de exemplo, com licença gratuita do Unsplash: Dellon Thomas (retratos) e rodrigo porto (centro cirúrgico). Serão trocadas pelas fotos do Dr. Iuri.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whats-fixo" id="whats-fixo" data-wa="Olá! Vim pelo blog e gostaria de mais informações sobre o atendimento do Dr. Iuri Zolini." href="https://wa.me/5531998900878" target="_blank" rel="noopener" aria-label="Falar com a equipe pelo WhatsApp"><svg><use href="#i-msg"/></svg><span>Agendar</span></a>
+
+<script>
+(() => {
+  const WA = "https://wa.me/5531998900878";
+  document.querySelectorAll("[data-wa]").forEach((a) => { a.href = `${WA}?text=${encodeURIComponent(a.dataset.wa)}`; });
+
+  const cards = [...document.querySelectorAll(".card-art")];
+  const arts = [...document.querySelectorAll(".artigo")];
+  const chips = [...document.querySelectorAll(".chip")];
+  const busca = document.getElementById("busca");
+  const vazio = document.getElementById("vazio");
+  const contagem = document.getElementById("contagem");
+  let filtro = "todos";
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const aplicar = () => {
+    const q = norm(busca.value.trim());
+    let n = 0;
+    const ok = (el) => (filtro === "todos" || el.dataset.cat === filtro) && (!q || norm(el.dataset.busca).includes(q));
+    cards.forEach((c) => { const v = ok(c); c.hidden = !v; if (v) n++; });
+    arts.forEach((a) => { a.hidden = !ok(a); });
+    vazio.hidden = n > 0;
+    contagem.textContent = n === 1 ? "1 artigo" : `${n} artigos`;
+  };
+  chips.forEach((c) => c.addEventListener("click", () => {
+    filtro = c.dataset.f;
+    chips.forEach((x) => x.setAttribute("aria-pressed", x === c));
+    aplicar();
+  }));
+  busca.addEventListener("input", aplicar);
+  const mostrarAncora = () => {
+    const alvo = location.hash && document.getElementById(location.hash.slice(1));
+    if (alvo && alvo.classList.contains("artigo") && alvo.hidden) {
+      filtro = "todos"; busca.value = "";
+      chips.forEach((x) => x.setAttribute("aria-pressed", x.dataset.f === "todos"));
+      aplicar(); alvo.scrollIntoView();
+    }
+  };
+  window.addEventListener("hashchange", mostrarAncora);
+  /* Ao abrir o blog direto num artigo (ex.: blog.html#lipo-hd), vai até ele sem animação */
+  const irParaAncora = () => {
+    const alvo = location.hash && document.getElementById(location.hash.slice(1));
+    if (!alvo) return;
+    mostrarAncora();
+    const raiz = document.documentElement;
+    raiz.style.scrollBehavior = "auto";
+    alvo.scrollIntoView({ block: "start" });
+    raiz.style.scrollBehavior = "";
+  };
+  irParaAncora();
+  window.addEventListener("load", irParaAncora);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(irParaAncora);
+  cards.forEach((c) => c.addEventListener("click", () => setTimeout(mostrarAncora, 0)));
+
+  const gaveta = document.getElementById("gaveta");
+  const abrir = document.getElementById("abrir-menu");
+  const fechar = document.getElementById("fechar-menu");
+  const setMenu = (on) => {
+    gaveta.hidden = !on; abrir.setAttribute("aria-expanded", on);
+    document.body.style.overflow = on ? "hidden" : "";
+    (on ? fechar : abrir).focus();
+  };
+  abrir.addEventListener("click", () => setMenu(true));
+  fechar.addEventListener("click", () => setMenu(false));
+  gaveta.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !gaveta.hidden) setMenu(false); });
+})();
+</script>
+</body>
+</html>
